@@ -131,3 +131,4 @@ dmypy.json
 *env
 *.db
 .vscode/
+venv*/
