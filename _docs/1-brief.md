@@ -1,4 +1,7 @@
 # Brief
+
+This file is about what was the main goals and ideas behind the project
+
 [go back](0-contents.md)
 
 ## Contents
