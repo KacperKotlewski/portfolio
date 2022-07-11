@@ -5,4 +5,6 @@
     >what is necessary in project
 
 
-[go back](https://github.com/KacperKotlewski/portfolio)
+*[go back](../README.md)*
+
+[back to repository](https://github.com/KacperKotlewski/portfolio)
