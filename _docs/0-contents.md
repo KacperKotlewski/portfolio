@@ -1,8 +1,10 @@
-# What you can find in docs:
+# Contents
 
+Contents of all docs
 
+What you can find in docs:
 - **[1-brief](1-brief.md)**
-    >what is necessary in project
+    >what is necessary for the project, what are the goals
 
 
 *[go back](../README.md)*
