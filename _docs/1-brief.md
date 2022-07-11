@@ -16,25 +16,37 @@ As the name of the project says it is a portfolio of myself that's why I need to
 
 ### my goals:
 - good looking portfolio
-- single page side for main "pages"
+- single page side for main "pages" (most important)
 - image building of mine
+- tracker of my journey
+- knowledge base - which technology I should learn and some kind of blog to have all my important knowledge in one place
+- easy to edit CV
 
 ### what visitors expect:
 - information about myself
+- why choose me
 - information about what I'm doing (kind of work)
 - information about my skillset
 - information about my tools
+- CV
+- projects
 - fields of interest
 - contact
 - co-operation
+
 
 ### must have:
 - who I am
   - short description
   - link to CV and co-operation
-- contact 
+  - why choose me to co-operation:
+    - I pay attention to the details in a customer project
+    - My focus is to make projects as clean and user-friendly as I possibly can
+    - I try to keep industry standards and work professionally
+- contact
   - how to contact me (email/linked)
   - contact form
+  - discord
 - links
   - to Github
   - to the portfolio repo
@@ -64,7 +76,7 @@ As the name of the project says it is a portfolio of myself that's why I need to
 - maybe:
   - Blog
   - Roadmap - what I know and what I have now on the crosshair
-  
+
 ---
 ## Concept and design
 in progress
