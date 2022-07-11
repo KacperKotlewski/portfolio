@@ -5,4 +5,4 @@
     >what is necessary in project
 
 
-[go back](https://github.com/KacperKotlewski/portfolio/tree/develop)
+[go back](https://github.com/KacperKotlewski/portfolio)
