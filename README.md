@@ -17,13 +17,13 @@ This repository is all about my current portfolio website. If you want to look a
 ---
 
 # Documentation
-You can read full documentation in (_docs folder)[_docs/0-contents.md]
+You can read full documentation in [_docs folder](_docs/0-contents.md)
 
 ---
 ## Installation process
 ### Prerequisites
 - Python [3.10.x](https://www.python.org/downloads/)
-- install [npm] (https://nodejs.org/en/download/)
+- install [npm](https://nodejs.org/en/download/)
 
 ### Requirements/Packages installation
 - install python packages ``./backend/requirements.txt`` 
@@ -70,4 +70,4 @@ You can read full documentation in (_docs folder)[_docs/0-contents.md]
 
 ---
 ## License
-Restricted for now (read)[LICENSE]
+Restricted for now [read](LICENSE)
