@@ -32,19 +32,8 @@ export default {
         box-shadow: 0 0 .1rem #fff,
                     0 0 .1rem #fff,
                     0 0 1rem #0AE1C1,
-                    0 0 0.4rem #0AE1C1,
-                    0 0 1.4rem #0AE1C1,
+                    0 0 0.2rem #0AE1C1,
+                    0 0 1.6rem #0AE1C1,
                     inset 0 0 0.65rem #0AE1C1;
-
-
-    text-shadow:
-      0 0 2px #fff,
-      0 0 5px #fff,
-      0 0 9px #fff,
-      0 0 20px #0AE1C1,
-      0 0 40px #0AE1C1,
-      0 0 45px #0AE1C1,
-      0 0 50px #0AE1C1,
-      0 0 75px #0AE1C1;
     }
 </style>
