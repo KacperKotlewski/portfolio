@@ -6,6 +6,7 @@ import vue_footer from '../components/footer.vue';
 
 import write from '../components/text/animation/write.vue';
 import blue_text from '../components/text/blue.vue';
+import { registerRuntimeHelpers } from '@vue/compiler-core';
 
 export default {
     props: ['screenSize'],
@@ -19,6 +20,7 @@ export default {
     },
     data() {
         return {
+            is_mobile: this.screenSize.width < 768,
         }
     },
     methods: {
@@ -37,7 +39,7 @@ export default {
                 blockedElement[i].classList.add('show-me');
             }
         }
-    }
+    },
 }
 </script>
 
@@ -48,12 +50,17 @@ export default {
     </nav>
     <fill_window  id="welcome">
         <flexMiddle :gap="70" >
-            <h1>
+            <header>
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
                     <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
-                    <span>I’m </span><blue_text>K</blue_text><span>acper, web developer.</span>
+                    <h1 class="subtitle">
+                        <flexMiddle :change_orientation="is_mobile">
+                            <span><span>I’m </span><blue_text>K</blue_text><span>acper,</span>
+                            <span> web developer.</span></span>
+                        </flexMiddle>
+                    </h1>
                 </write>
-            </h1>
+            </header>
             <buttonColumn id="welcome_buttons" :size_of_btns="160" :gaps_between_btns="30" :screenSize="screenSize" class="hiddenElement top" />
         </flexMiddle>
     </fill_window>
@@ -65,9 +72,11 @@ export default {
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
                 </h2>
             </div>
-            <flexMiddle>
-
-            </flexMiddle>
+            <fill_window :height="'80%'">
+                <flexMiddle id="contact_flex">
+                    <a href="mailto:kacperkotlewski.kontakt@gmail.com"><i class="bi bi-envelope-open-fill"></i> kacperkotlewski.kontakt@gmail.com</a>
+                </flexMiddle>
+            </fill_window>
         </fill_window>
         <fill_window :height="'20vh'">
             <vue_footer />
@@ -76,11 +85,11 @@ export default {
 </template>
 
 <style scoped>
-h1 {
+header {
     text-align: center;
     color: #fff;
 }
-h1 strong, h1 strong span {
+header strong, header strong span {
     font-size: 3.5rem;
     font-weight: bold;
 }
@@ -90,6 +99,16 @@ h2 {
 }
 h2 strong, h2 strong span {
     font-size: 3.5rem;
+}
+#contact_flex a{
+    text-decoration: none;
+    color: #0ae1c1;
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+    #contact_flex a{
+        font-size: 1.2rem;
+    }
 }
 .pageHeader{
     padding-top: 30px;
@@ -127,12 +146,14 @@ nav#sideScroll span {
     transform: translate(0%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    display: none;
 }
 nav#sideScroll li:hover i {
     opacity: 1;
 }
 nav#sideScroll li:hover span {
     opacity: 1;
+    display: block;
 }
 </style>
 <style>
@@ -140,7 +161,7 @@ nav#sideScroll li:hover span {
 .hiddenElement {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    position: relative;
+    /* position: relative; */
 }
 .blockedElement {
     display: none;
@@ -152,24 +173,24 @@ nav#sideScroll li:hover span {
 }
 
 .hiddenElement > * {
-    position: absolute;
+    /* position: absolute;
     top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 .hiddenElement.top > * {
-    top: -5vh;
-    transition: top 0.5s ease-out;
+    /* top: -5vh;
+    transition: top 0.5s ease-out; */
 }
 .show-me.top > * {
-    top: 0px;
+    /* top: 0px; */
 }
 .hiddenElement.left > * {
-    left: -5vw;
-    transition: top 0.5s ease-out;
+    /* left: -5vw;
+    transition: top 0.5s ease-out; */
 }
 .show-me.left > * {
-    left: 50%;
+    /* left: 50%; */
 }
 
 
