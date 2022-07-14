@@ -3,6 +3,7 @@ import buttonColumn from '../components/buttons/buttons_col.vue';
 import flexMiddle from '../components/flex/flex_middle.vue';
 import fill_window from '../components/fill_window.vue';
 import vue_footer from '../components/footer.vue';
+import contact_form from '../components/contact_form.vue';
 
 import write from '../components/text/animation/write.vue';
 import blue_text from '../components/text/blue.vue';
@@ -17,6 +18,7 @@ export default {
         vue_footer,
         write,
         blue_text,
+        contact_form,
     },
     data() {
         return {
@@ -66,15 +68,16 @@ export default {
     </fill_window>
 
     <fill_window id="footer" class="blockedElement">
-        <fill_window :height="'80vh'">
-            <div class="pageHeader">
+        <fill_window :height="'20vh'" style="display: flex; align-items:flex-end; justify-content:center;">
                 <h2>
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
                 </h2>
-            </div>
+        </fill_window>
+        <fill_window :height="'60vh'">
             <fill_window :height="'80%'">
                 <flexMiddle id="contact_flex">
                     <a href="mailto:kacperkotlewski.kontakt@gmail.com"><i class="bi bi-envelope-open-fill"></i> kacperkotlewski.kontakt@gmail.com</a>
+                    <contact_form/>
                 </flexMiddle>
             </fill_window>
         </fill_window>
@@ -99,7 +102,7 @@ h2 {
     color: #fff;
 }
 h2 strong, h2 strong span {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 #contact_flex a{
     text-decoration: none;
@@ -110,9 +113,6 @@ h2 strong, h2 strong span {
     #contact_flex a{
         font-size: 1.2rem;
     }
-}
-.pageHeader{
-    padding-top: 30px;
 }
 nav#sideScroll {
     position: fixed;
