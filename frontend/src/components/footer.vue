@@ -19,13 +19,13 @@ export default {
     <footer>
         <flexMiddle>
             <h2><strong>Kacper Kotlewski</strong></h2>
-            <flexMiddle :dir="'row'" :gap="20">
+            <!-- <flexMiddle :dir="'row'" :gap="20">
                 <a>link</a>
                 <vl />
                 <a>link</a>
                 <vl />
                 <a>link</a>
-            </flexMiddle>
+            </flexMiddle> -->
             <span>© 2022 Kacper Kotlewski. All rights reserved</span>
         </flexMiddle>
     </footer>
