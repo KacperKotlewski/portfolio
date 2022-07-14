@@ -1,24 +1,23 @@
 <script>
 export default {
-    props: ['gap', 'dir', 'fill'],
+    props: ['gap', 'dir', 'fill', 'change_orientation'],
     data() {
         return {
             width: 'auto',
             height: 'auto',
+            orientation: (this.dir ? this.dir : 'column'),
         }
     },
     computed: {
         cssVars () {
             return {
-                '--direction': (this.dir ? this.dir : 'column'),
+                '--direction': (this.change_orientation == true? (this.orientation =='row'?'column':'row') : this.orientation),
+                // '--direction': this.orientation,
                 '--width': this.width,
                 '--height': this.height,
                 '--gap': (this.gap) + (isNaN(this.gap)?'':"px"),
             }
         }
-    },
-    mounted:function(){
-            this.getFill()
     },
     methods: {
         getFill() {
@@ -51,8 +50,11 @@ export default {
             else if (dimension == 'y') {
                 this.height= value;
             }
-        }
-    }
+        },
+    },
+    mounted:function(){
+            this.getFill();
+    },
 }
 </script>
 
