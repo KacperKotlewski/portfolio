@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <div>
+  <div class="main">
     <header>
       <nav>
         <RouterLink to="/">home</RouterLink>
@@ -46,7 +46,7 @@ content {
   width: 100vw;
 }
 
-div {
+div.main {
   position: relative;
   width: 100%;
   height: 100%;
@@ -59,6 +59,27 @@ header{
 
 <style>
 @import "@/assets/base.css";
+
+/* width */
+::-webkit-scrollbar {
+  width:5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
 
 #app {
   max-width: 1280px;
