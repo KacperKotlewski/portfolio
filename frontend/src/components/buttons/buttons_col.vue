@@ -30,6 +30,7 @@ export default {
 
 
 <template>
+<div>
 <flexMiddle :dir="[ mobile_buttons?'column':'row' ]" :fill="'none'" :gap="gaps_between_btns">
     <ButtonComp
         :style="cssVars"
@@ -38,6 +39,7 @@ export default {
         :icon="item.icon"
     />
 </flexMiddle>
+</div>
 </template>
 
 <style scoped>
