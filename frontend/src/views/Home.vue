@@ -40,7 +40,22 @@ export default {
             for (let i = 0; i < blockedElement.length; i++) {
                 blockedElement[i].classList.add('show-me');
             }
-        }
+        },
+        on_click_hidden_link(event) {
+            console.log(event);
+            let parent = event.target.parentNode;;
+            while (parent != document.body) {
+                parent = parent.parentNode;
+                console.log(parent);
+                if (parent.classList.contains('hiddenElement') && !parent.classList.contains('show-me')) {
+                    event.preventDefault();
+                    return;
+                }
+            }
+        },
+    },
+    mounted() {
+        window.addEventListener('click', this.on_click_hidden_link);
     },
 }
 </script>
@@ -172,26 +187,11 @@ nav#sideScroll li:hover span {
     opacity: 1;
     display: block;
 }
-
-.hiddenElement > * {
-    /* position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+.hiddenElement a {
+    cursor: default;
 }
-.hiddenElement.top > * {
-    /* top: -5vh;
-    transition: top 0.5s ease-out; */
-}
-.show-me.top > * {
-    /* top: 0px; */
-}
-.hiddenElement.left > * {
-    /* left: -5vw;
-    transition: top 0.5s ease-out; */
-}
-.show-me.left > * {
-    /* left: 50%; */
+.show-me a {
+    cursor: pointer;
 }
 
 
