@@ -54,9 +54,9 @@ export default {
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
                     <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
                     <h1 class="subtitle">
-                        <flexMiddle :change_orientation="is_mobile">
-                            <span><span>I’m </span><blue_text>K</blue_text><span>acper,</span>
-                            <span> web developer.</span></span>
+                        <flexMiddle :dir="'row'" :change_orientation="is_mobile">
+                            <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
+                            <span>&nbsp;web developer.</span>
                         </flexMiddle>
                     </h1>
                 </write>
@@ -88,6 +88,7 @@ export default {
 header {
     text-align: center;
     color: #fff;
+
 }
 header strong, header strong span {
     font-size: 3.5rem;
