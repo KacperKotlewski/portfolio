@@ -90,7 +90,6 @@ h2 {
 }
 h2 strong, h2 strong span {
     font-size: 3.5rem;
-    font-weight: bold;
 }
 .pageHeader{
     padding-top: 30px;
