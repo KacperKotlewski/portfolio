@@ -84,7 +84,6 @@ header{
 }
 
 #app {
-  max-width: 1280px;
   font-weight: normal;
   height: 100vh;
   display: flex;
