@@ -68,6 +68,8 @@ header{
 /* Track */
 ::-webkit-scrollbar-track {
   background-color: inherit;
+  background: #444;
+  width:3px;
 }
 
 /* Handle */
@@ -90,6 +92,7 @@ header{
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  overflow-y: scroll;
 }
 
 header {
@@ -100,8 +103,9 @@ header {
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: center;
+  text-align: right;
   margin-top: 2rem;
+  margin-right: 2rem;
 }
 
 nav a.router-link-exact-active {
