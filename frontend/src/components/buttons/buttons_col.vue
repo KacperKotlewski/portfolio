@@ -11,8 +11,10 @@ export default {
     data() {
         return {
             items: [
+                { icon:"bi bi-linkedin", text:"LinkedIn", link:"https://www.linkedin.com/in/kacper-kotlewski-94b932168/", target:"_blank"},
                 { icon:"bi bi-github", text:"Github", link:"https://github.com/KacperKotlewski", target:"_blank"},
                 { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
+
                 // { icon:"bi bi-envelope-fill", text:"Contact" },
                 // { icon:"bi bi-file-earmark-person-fill", text:"Resume" }
             ],
