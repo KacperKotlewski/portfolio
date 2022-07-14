@@ -11,9 +11,10 @@ export default {
     data() {
         return {
             items: [
-                { icon:"bi bi-github", text:"Github" },
-                { icon:"bi bi-file-earmark-person-fill", text:"Contact" },
-                { icon:"bi bi-envelope-fill", text:"Resume" }
+                { icon:"bi bi-github", text:"Github", link:"https://github.com/KacperKotlewski", target:"_blank"},
+                { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
+                // { icon:"bi bi-envelope-fill", text:"Contact" },
+                // { icon:"bi bi-file-earmark-person-fill", text:"Resume" }
             ],
         }
     },
@@ -37,13 +38,15 @@ export default {
         v-for="item in items"
         :text="item.text"
         :icon="item.icon"
+        :link="item.link"
+        :target="item.target"
     />
 </flexMiddle>
 </div>
 </template>
 
 <style scoped>
-button {
+a {
     width:var(--size_of_btns);
 }
 </style>
