@@ -61,7 +61,7 @@ nav#topMenu{
 
 /* width */
 ::-webkit-scrollbar {
-  width:5px;
+  width:7px;
 }
 
 /* Track */
