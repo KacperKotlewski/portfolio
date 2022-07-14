@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div class="main">
     <header>
-      <nav>
+      <nav id="topMenu">
         <RouterLink to="/">home</RouterLink>
       </nav>
     </header>
@@ -100,7 +100,7 @@ header {
   max-height: 10vh;
 }
 
-nav {
+nav#topMenu {
   width: 100%;
   font-size: 12px;
   text-align: right;
@@ -108,21 +108,21 @@ nav {
   margin-right: 2rem;
 }
 
-nav a.router-link-exact-active {
+nav#topMenu a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+nav#topMenu a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
+nav#topMenu a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
 
-nav a:first-of-type {
+nav#topMenu a:first-of-type {
   border: 0;
 }
 </style>
