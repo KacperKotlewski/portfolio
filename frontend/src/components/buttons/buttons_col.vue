@@ -11,9 +11,9 @@ export default {
     data() {
         return {
             items: [
-                { text:"Github" },
-                { text:"Contact" },
-                { text:"Resume" }
+                { icon:"bi bi-github", text:"Github" },
+                { icon:"bi bi-file-earmark-person-fill", text:"Contact" },
+                { icon:"bi bi-envelope-fill", text:"Resume" }
             ],
         }
     },
@@ -35,6 +35,7 @@ export default {
         :style="cssVars"
         v-for="item in items"
         :text="item.text"
+        :icon="item.icon"
     />
 </flexMiddle>
 </template>

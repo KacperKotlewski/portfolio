@@ -1,16 +1,15 @@
 <script>
 export default {
-  props: ['text'],
+  props: ['text', 'icon'],
   data() {
     return {
-        icon: "i",
     }
   }
 }
 </script>
 
 <template>
-    <button>{{ icon }} {{ text }}</button>
+    <button><i :class='icon'></i> {{ text }}</button>
 </template>
 
 <style scoped>
