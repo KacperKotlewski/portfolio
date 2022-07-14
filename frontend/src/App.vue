@@ -4,11 +4,10 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <div class="main">
-    <header>
-      <nav id="topMenu">
-        <RouterLink to="/">home</RouterLink>
-      </nav>
-    </header>
+    <nav id="topMenu">
+      <RouterLink to="/">home</RouterLink>
+    </nav>
+
     <content>
       <RouterView :screenSize='screenSize' />
     </content>
@@ -51,7 +50,7 @@ div.main {
   width: 100%;
   height: 100%;
 }
-header{
+nav#topMenu{
   position: fixed;
   width: 100%;
 }
@@ -92,11 +91,7 @@ header{
   justify-content: center;
   margin: 0 auto;
   overflow-y: scroll;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 10vh;
+  overflow-x: hidden;
 }
 
 nav#topMenu {
