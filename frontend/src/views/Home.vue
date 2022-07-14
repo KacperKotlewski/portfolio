@@ -23,7 +23,16 @@ export default {
     },
     methods: {
         on_writeing_end() {
-            console.log('end');
+            let hiddenElements = document.querySelectorAll('.hiddenElement');
+            console.log(hiddenElements);
+            for (let i = 0; i < hiddenElements.length; i++) {
+                hiddenElements[i].classList.add('show-me');
+            }
+            let blockedElement = document.querySelectorAll('.blockedElement');
+            console.log(blockedElement);
+            for (let i = 0; i < blockedElement.length; i++) {
+                blockedElement[i].classList.add('show-me');
+            }
         }
     }
 }
@@ -31,7 +40,7 @@ export default {
 
 <template>
     <fill_window>
-        <flexMiddle :gap="30">
+        <flexMiddle :gap="70">
             <h1>
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
                     <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
@@ -60,10 +69,30 @@ h1 strong, h1 strong span {
     font-size: 3.5rem;
     font-weight: bold;
 }
+</style>
+<style>
 .hiddenElement {
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: relative;
 }
 .blockedElement {
     display: none;
+}
+
+.show-me {
+    opacity: 1;
+    display: block;
+}
+
+.hiddenElement > * {
+    position: absolute;
+    top: -5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.5s ease-out;
+}
+.show-me > * {
+    top: 0px;
 }
 </style>
