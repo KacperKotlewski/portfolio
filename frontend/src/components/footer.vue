@@ -17,27 +17,33 @@ export default {
 
 <template>
     <footer>
-        <flexMiddle>
-            <h2><strong>Kacper Kotlewski</strong></h2>
-            <!-- <flexMiddle :dir="'row'" :gap="20">
-                <a>link</a>
-                <vl />
-                <a>link</a>
-                <vl />
-                <a>link</a>
-            </flexMiddle> -->
-            <span>© 2022 Kacper Kotlewski. All rights reserved</span>
-        </flexMiddle>
+        <h2><strong>Kacper Kotlewski</strong></h2>
+        <!-- <flexMiddle :dir="'row'" :gap="20">
+            <a>link</a>
+            <vl />
+            <a>link</a>
+            <vl />
+            <a>link</a>
+        </flexMiddle> -->
+        <a href="mailto:kacperkotlewski.kontakt@gmail.com"><i class="bi bi-envelope-open-fill"></i> kacperkotlewski.kontakt@gmail.com</a>
+        <br>
+        <span>© 2022 Kacper Kotlewski. All rights reserved</span>
     </footer>
 </template>
 
 <style scoped>
 footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
     background-color: #81818139;
     color: #fff;
     text-align: center;
     line-height: 50px;
+    overflow: hidden;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
 }
 </style>
