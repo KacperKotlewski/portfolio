@@ -4,6 +4,7 @@ import flexMiddle from '../components/flex/flex_middle.vue';
 import fill_window from '../components/fill_window.vue';
 import vue_footer from '../components/footer.vue';
 import contact_form from '../components/contact_form.vue';
+import in_build from './in_build.vue';
 
 import write from '../components/text/animation/write.vue';
 import blue_text from '../components/text/blue.vue';
@@ -19,11 +20,12 @@ export default {
         write,
         blue_text,
         contact_form,
+        in_build,
     },
     data() {
         return {
             is_mobile: this.screenSize.width < 768,
-            views: ['Welcome'],
+            views: {'slide_0':'Welcome', 'slide_1':'In Progress'},
         }
     },
     methods: {
@@ -61,9 +63,9 @@ export default {
 
 <template>
     <nav id="sideScroll" class="hiddenElement">
-        <li v-for="item in views" @click="scrollToElement(item)"><i class="bi bi-record-circle-fill"></i><span>{{ item }}</span></li>
+        <li v-for="(value, name) in views" @click="scrollToElement(name)"><i class="bi bi-record-circle-fill"></i><span>{{ value }}</span></li>
     </nav>
-    <fill_window  :id="views[0]" class="view_site">
+    <fill_window  id="slide_0">
         <flexMiddle :gap="70" >
             <header>
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
@@ -80,7 +82,7 @@ export default {
         </flexMiddle>
     </fill_window>
 
-    <!-- <fill_window :id="views[1]" class="blockedElement main_view">
+    <!-- <fill_window :id="views[1]" class="blockedElement">
         <fill_window :height="'20vh'" style="display: flex; align-items:flex-end; justify-content:center;">
                 <h2>
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
@@ -92,6 +94,7 @@ export default {
             </flexMiddle>
         </fill_window>
     </fill_window> -->
+    <in_build id="slide_1" class="blockedElement"/>
     <vue_footer class="hiddenElement"/>
 </template>
 
