@@ -43,11 +43,9 @@ export default {
             }
         },
         on_click_hidden_link(event) {
-            console.log(event);
             let parent = event.target.parentNode;;
             while (parent != document.body) {
                 parent = parent.parentNode;
-                console.log(parent);
                 if (parent.classList.contains('hiddenElement') && !parent.classList.contains('show-me')) {
                     event.preventDefault();
                     return;
