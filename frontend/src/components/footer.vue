@@ -17,7 +17,7 @@ export default {
 
 <template>
     <footer>
-        <h2><strong>Kacper Kotlewski</strong></h2>
+        <!-- <h2><strong>Kacper Kotlewski</strong></h2> -->
         <!-- <flexMiddle :dir="'row'" :gap="20">
             <a>link</a>
             <vl />
@@ -33,10 +33,10 @@ export default {
 
 <style scoped>
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #81818139;
+    background-color: #333;
     color: #fff;
     text-align: center;
     line-height: 50px;
