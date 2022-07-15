@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             is_mobile: this.screenSize.width < 768,
-            views: ['Welcome', 'Contact'],
+            views: ['Welcome'],
         }
     },
     methods: {
@@ -80,7 +80,7 @@ export default {
         </flexMiddle>
     </fill_window>
 
-    <fill_window :id="views[1]" class="blockedElement main_view">
+    <!-- <fill_window :id="views[1]" class="blockedElement main_view">
         <fill_window :height="'20vh'" style="display: flex; align-items:flex-end; justify-content:center;">
                 <h2>
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
@@ -91,8 +91,8 @@ export default {
                 <contact_form/>
             </flexMiddle>
         </fill_window>
-        <vue_footer />
-    </fill_window>
+    </fill_window> -->
+    <vue_footer class="hiddenElement"/>
 </template>
 
 <style scoped>
