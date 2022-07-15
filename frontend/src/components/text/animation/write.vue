@@ -17,7 +17,6 @@ export default {
         get_children(child) {
             let html=child.innerHTML;
             this.tags = this.getChildrenTags(child);
-            this.tags += '<i class="invisibleLetter"></i>';
             this.text = this.getChildrenLetters(child);
         },
 
