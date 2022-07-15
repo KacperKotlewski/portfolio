@@ -1,19 +1,52 @@
 <script>
-export default{
+import emailjs from 'emailjs-com';
 
+export default{
+    data() {
+        return {
+            post: {
+                name: null,
+                email: null,
+                subject: null,
+                message: null,
+            },
+        }
+    },
+    methods: {
+        postData(e){
+            e.preventDefault();
+            try {
+                emailjs.send(import.meta.env.EMAILJS_SERVICE_ID, import.meta.env.EMAILJS_TEMPLATE_ID, e.target,
+                import.meta.env.EMAILJS_USER_ID, {
+                    name: this.post.name,
+                    subject: this.post.subject,
+                    email: this.post.email,
+                    message: this.post.message
+                })
+
+                this.post.name = null
+                this.post.email = null
+                this.post.subject = null
+                this.post.message = null
+
+            } catch(error) {
+                console.log({error})
+            }
+        }
+    }
 }
 </script>
 
 <template>
-    <form id="email_form">
+    <form id="email_form" @submit="postData" method="post">
         <div id="first_holder">
-            <input placeholder="Name" type="text" name="name">
-            <input placeholder="Email*" type="email" name="email" required>
-            <input placeholder="Subject" type="text" name="subject">
+            <input placeholder="Name" type="text" name="name" v-model="post.name">
+            <input placeholder="Email*" type="email" name="email" required v-model="post.email">
+            <input placeholder="Subject" type="text" name="subject" v-model="post.subject">
         </div>
         <div id="second_holder">
-            <textarea placeholder="Message*" name="message" required></textarea>
-            <span id="send"><i class="bi bi-send-fill"></i><span>send</span></span>
+            <textarea placeholder="Message*" name="message" required v-model="post.message"></textarea>
+            <button id="send"><i class="bi bi-send-fill"></i><span>send</span></button>
         </div>
     </form>
 </template>
@@ -35,7 +68,7 @@ export default{
         background-color: rgba(0, 0, 0, 0.8);
         border: 3px solid #0AE1C1;
         border-radius: 1rem;
-        color: #0AE1C1;
+        color: #fff;
         font-size: 1rem;
         padding: 0.5rem 1rem;
         transition: 0.4s;
