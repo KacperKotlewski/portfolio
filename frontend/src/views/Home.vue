@@ -23,6 +23,7 @@ export default {
     data() {
         return {
             is_mobile: this.screenSize.width < 768,
+            views: ['Welcome', 'Contact'],
         }
     },
     methods: {
@@ -62,10 +63,9 @@ export default {
 
 <template>
     <nav id="sideScroll" class="hiddenElement">
-        <li @click="scrollToElement('welcome')"><i class="bi bi-record-circle-fill"></i><span>Welcome</span></li>
-        <li @click="scrollToElement('footer')"><i class="bi bi-record-circle-fill"></i><span>Contact</span></li>
+        <li v-for="item in views" @click="scrollToElement(item)"><i class="bi bi-record-circle-fill"></i><span>{{ item }}</span></li>
     </nav>
-    <fill_window  id="welcome">
+    <fill_window  :id="views[0]" class="view_site">
         <flexMiddle :gap="70" >
             <header>
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
@@ -82,7 +82,7 @@ export default {
         </flexMiddle>
     </fill_window>
 
-    <fill_window id="footer" class="blockedElement">
+    <fill_window :id="views[1]" class="blockedElement main_view">
         <fill_window :height="'20vh'" style="display: flex; align-items:flex-end; justify-content:center;">
                 <h2>
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
