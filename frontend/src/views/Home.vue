@@ -88,17 +88,12 @@ export default {
                     <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
                 </h2>
         </fill_window>
-        <fill_window :height="'60vh'">
-            <fill_window :height="'80%'">
-                <flexMiddle id="contact_flex">
-                    <a href="mailto:kacperkotlewski.kontakt@gmail.com"><i class="bi bi-envelope-open-fill"></i> kacperkotlewski.kontakt@gmail.com</a>
-                    <contact_form/>
-                </flexMiddle>
-            </fill_window>
+        <fill_window :height="'65vh'" style="overflow:hidden;">
+            <flexMiddle id="contact_flex" :dir="'row'">
+                <contact_form/>
+            </flexMiddle>
         </fill_window>
-        <fill_window :height="'20vh'">
-            <vue_footer />
-        </fill_window>
+        <vue_footer />
     </fill_window>
 </template>
 
