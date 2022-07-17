@@ -68,19 +68,19 @@ export default {
         <li v-for="(value, name) in views" @click="scrollToElement(name)"><i class="bi bi-record-circle-fill"></i><span>{{ value }}</span></li>
     </nav>
     <fill_window  id="slide_0">
-        <flexMiddle :gap="70" >
+        <flexMiddle :gap="70">
             <header>
                 <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
                     <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
                     <h1 class="subtitle">
-                        <flexMiddle :dir="'row'" :change_orientation="is_mobile">
+                        <flexMiddle :dir="'row'" :change_on_mobile="true">
                             <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
                             <span>&nbsp;web developer.</span>
                         </flexMiddle>
                     </h1>
                 </write>
             </header>
-            <buttonColumn id="welcome_buttons" :size_of_btns="160" :gaps_between_btns="30" :screenSize="screenSize" class="hiddenElement top" />
+            <buttonColumn id="welcome_buttons" :gaps_between_btns="30" class="hiddenElement top" />
         </flexMiddle>
     </fill_window>
 
@@ -121,11 +121,6 @@ h2 strong, h2 strong span {
     text-decoration: none;
     color: #0ae1c1;
     font-size: 1.5rem;
-}
-@media screen and (max-width: 768px) {
-    #contact_flex a{
-        font-size: 1.2rem;
-    }
 }
 nav#sideScroll {
     position: fixed;
@@ -168,6 +163,15 @@ nav#sideScroll li:hover i {
 nav#sideScroll li:hover span {
     opacity: 1;
     display: block;
+}
+
+@media screen and (max-width: 768px) {
+    #contact_flex a{
+        font-size: 1.2rem;
+    }
+    nav#sideScroll {
+        display: none;
+    }
 }
 </style>
 <style>
