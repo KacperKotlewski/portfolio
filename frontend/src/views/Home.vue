@@ -26,7 +26,7 @@ export default {
                 'slide_0':{
                     "name":'Welcome',
                     "component": welcome,
-                    "active": false,
+                    "active": true,
                     },
                 'slide_1':{
                     "name":'In Progress',
@@ -69,11 +69,11 @@ export default {
 </script>
 
 <template>
-    <navbar_on_side :views="views"/>
+    <navbar_on_side :views="null"/>
+
     <fill_window  id="slide_0">
         <welcome @animation_finished="on_welcome_animation_end"/>
     </fill_window>
-
 
     <!-- <in_build id="slide_1" class="blockedElement"/> -->
     <vue_footer class="blockedElement hiddenElement"/>
