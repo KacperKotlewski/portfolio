@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['gap', 'dir', 'fill', 'change_orientation'],
+    props: ['gap', 'dir', 'fill', 'change_orientation', 'change_on_mobile'],
     data() {
         return {
             width: 'auto',
@@ -9,9 +9,16 @@ export default {
         }
     },
     computed: {
+        final_orientation() {
+            if (this.change_orientation == true)
+                return this.reverseOrientation(this.orientation)
+            else
+                return this.orientation
+        },
         cssVars () {
             return {
-                '--direction': (this.change_orientation == true? (this.orientation =='row'?'column':'row') : this.orientation),
+                '--direction': this.final_orientation,
+                '--mobile-dir': (this.change_on_mobile == true? this.reverseOrientation(this.final_orientation) : this.final_orientation),
                 // '--direction': this.orientation,
                 '--width': this.width,
                 '--height': this.height,
@@ -20,6 +27,9 @@ export default {
         }
     },
     methods: {
+        reverseOrientation(orientation) {
+            return orientation =='row'?'column':'row';
+        },
         getFill() {
             if (typeof(this.fill) == 'object') {
                 this.setFill('x', this.fill.x);
@@ -42,6 +52,9 @@ export default {
             else if (type == 'auto' || type == 'none')
             {
                 value = 'auto';
+            }
+            else{
+                value = type;
             }
 
             if (dimension == 'x') {
@@ -75,4 +88,10 @@ export default {
         width: var(--width);
         height: var(--height);
     }
+    @media screen and (max-width: 768px) {
+        div.flex_box{
+            flex-direction: var(--mobile-dir);
+        }
+    }
+
 </style>
