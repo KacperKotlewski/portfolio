@@ -7,7 +7,7 @@ export default {
         ButtonComp,
         flexMiddle,
     },
-    props: ['size_of_btns', "screenSize", "gaps_between_btns"],
+    props: ["gaps_between_btns"],
     data() {
         return {
             items: [
@@ -23,10 +23,10 @@ export default {
     computed: {
         cssVars () {
             return {
-                '--size_of_btns': (this.size_of_btns) + "px",
+                '--size_of_btns': (768 - ((this.items.length+1)*this.gaps_between_btns))/this.items.length + "px",
             }
         },
-        mobile_buttons() {return (this.screenSize.width < (this.size_of_btns * this.items.length + this.gaps_between_btns * (this.items.length + 1)))}
+        // mobile_buttons() {return (this.screenSize.width < (this.size_of_btns * this.items.length + this.gaps_between_btns * (this.items.length + 1)))}
     }
 }
 </script>
@@ -34,7 +34,7 @@ export default {
 
 <template>
 <div>
-<flexMiddle :dir="[ mobile_buttons?'column':'row' ]" :fill="'none'" :gap="gaps_between_btns">
+<flexMiddle :dir="'row'" :fill="'none'" :gap="gaps_between_btns">
     <ButtonComp
         :style="cssVars"
         v-for="item in items"
@@ -51,10 +51,13 @@ export default {
 a {
     width:var(--size_of_btns);
 }
+
+@media screen and (max-width: 768px) {
+    div.flex_box {
+        flex-direction: column;
+    }
+}
 </style>
 <style>
-.flexForMobile {
-    flex-direction: column;
-    gap: 20px;
-}
+
 </style>
