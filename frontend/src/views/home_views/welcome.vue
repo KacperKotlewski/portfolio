@@ -7,6 +7,18 @@ import write from '../../components/text/animation/write.vue';
 import blue_text from '../../components/text/blue.vue';
 
 export default {
+    data() {
+        return {
+            buttons: [
+                { icon:"bi bi-linkedin", text:"LinkedIn", link:"https://www.linkedin.com/in/kacper-kotlewski-94b932168/", target:"_blank"},
+                { icon:"bi bi-github", text:"Github", link:"https://github.com/KacperKotlewski", target:"_blank"},
+                // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
+                // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
+                // { icon:"bi bi-envelope-fill", text:"Contact" },
+                { icon:"bi bi-file-earmark-person-fill", text:"Resume", link:"https://drive.google.com/file/d/1YBhvd03l247Sb14V3ZxMpYn-s837tzq_/view?usp=sharing", target:"_blank" }
+            ],
+        }
+    },
     components: {
         buttonColumn,
         flexMiddle,
@@ -37,7 +49,7 @@ export default {
                 </h1>
             </write>
         </header>
-        <buttonColumn id="welcome_buttons" :gaps_between_btns="30" class="hiddenElement top" />
+        <buttonColumn id="welcome_buttons" :gaps_between_btns="30" :buttons="buttons" class="hiddenElement top"/>
     </flexMiddle>
 </template>
 

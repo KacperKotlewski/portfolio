@@ -7,23 +7,11 @@ export default {
         ButtonComp,
         flexMiddle,
     },
-    props: ["gaps_between_btns"],
-    data() {
-        return {
-            items: [
-                { icon:"bi bi-linkedin", text:"LinkedIn", link:"https://www.linkedin.com/in/kacper-kotlewski-94b932168/", target:"_blank"},
-                { icon:"bi bi-github", text:"Github", link:"https://github.com/KacperKotlewski", target:"_blank"},
-                // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
-                // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
-                // { icon:"bi bi-envelope-fill", text:"Contact" },
-                { icon:"bi bi-file-earmark-person-fill", text:"Resume", link:"https://drive.google.com/file/d/1YBhvd03l247Sb14V3ZxMpYn-s837tzq_/view?usp=sharing", target:"_blank" }
-            ],
-        }
-    },
+    props: ["gaps_between_btns", 'buttons'],
     computed: {
         cssVars () {
             return {
-                '--size_of_btns': (768 - ((this.items.length+1)*this.gaps_between_btns))/this.items.length + "px",
+                '--size_of_btns': (768 - ((this.buttons.length+1)*this.gaps_between_btns))/this.buttons.length + "px",
             }
         },
         // mobile_buttons() {return (this.screenSize.width < (this.size_of_btns * this.items.length + this.gaps_between_btns * (this.items.length + 1)))}
@@ -37,7 +25,7 @@ export default {
 <flexMiddle :dir="'row'" :fill="'none'" :gap="gaps_between_btns">
     <ButtonComp
         :style="cssVars"
-        v-for="item in items"
+        v-for="item in buttons"
         :text="item.text"
         :icon="item.icon"
         :link="item.link"
