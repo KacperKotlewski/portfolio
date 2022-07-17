@@ -1,41 +1,46 @@
 <script>
-import buttonColumn from '../components/buttons/buttons_col.vue';
-import flexMiddle from '../components/flex/flex_middle.vue';
 import fill_window from '../components/fill_window.vue';
+import navbar_on_side from '../components/navbar_on_side.vue';
+
+import welcome from './home_views/welcome.vue';
 import vue_footer from '../components/footer.vue';
-import contact_form from '../components/contact_form.vue';
+import contact from './home_views/contact.vue';
 import in_build from './in_build.vue';
 
-import write from '../components/text/animation/write.vue';
-import blue_text from '../components/text/blue.vue';
 import { registerRuntimeHelpers } from '@vue/compiler-core';
 
 export default {
     props: ['screenSize'],
     components: {
-        buttonColumn,
-        flexMiddle,
         fill_window,
+        navbar_on_side,
+
         vue_footer,
-        write,
-        blue_text,
-        contact_form,
         in_build,
+        welcome,
+        contact,
     },
     data() {
         return {
-            views: {'slide_0':'Welcome', 'slide_1':'In Progress'},
+            views: {
+                'slide_0':{
+                    "name":'Welcome',
+                    "component": welcome,
+                    "active": false,
+                    },
+                'slide_1':{
+                    "name":'In Progress',
+                    "component": in_build,
+                    "active": false,
+                    },
+                },
         }
     },
     computed: {
         is_mobile() { return this.screenSize.width < 768 },
     },
     methods: {
-        scrollToElement(id) {
-            const el = document.querySelector(`#${id}`);
-            el.scrollIntoView({behavior: "smooth"});
-        },
-        on_writeing_end() {
+        on_welcome_animation_end() {
             let hiddenElements = document.querySelectorAll('.hiddenElement');
             for (let i = 0; i < hiddenElements.length; i++) {
                 hiddenElements[i].classList.add('show-me');
@@ -64,115 +69,17 @@ export default {
 </script>
 
 <template>
-    <nav id="sideScroll" class="hiddenElement">
-        <li v-for="(value, name) in views" @click="scrollToElement(name)"><i class="bi bi-record-circle-fill"></i><span>{{ value }}</span></li>
-    </nav>
+    <navbar_on_side :views="views"/>
     <fill_window  id="slide_0">
-        <flexMiddle :gap="70">
-            <header>
-                <write @animation_finished="on_writeing_end" :start="true" :delay="1000">
-                    <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
-                    <h1 class="subtitle">
-                        <flexMiddle :dir="'row'" :change_on_mobile="true">
-                            <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
-                            <span>&nbsp;web developer.</span>
-                        </flexMiddle>
-                    </h1>
-                </write>
-            </header>
-            <buttonColumn id="welcome_buttons" :gaps_between_btns="30" class="hiddenElement top" />
-        </flexMiddle>
+        <welcome @animation_finished="on_welcome_animation_end"/>
     </fill_window>
 
-    <!-- <fill_window :id="views[1]" class="blockedElement">
-        <fill_window :height="'20vh'" style="display: flex; align-items:flex-end; justify-content:center;">
-                <h2>
-                    <strong><blue_text>C</blue_text><span>ontact</span></strong><br/>
-                </h2>
-        </fill_window>
-        <fill_window :height="'65vh'" style="overflow:hidden;">
-            <flexMiddle id="contact_flex" :dir="'row'">
-                <contact_form/>
-            </flexMiddle>
-        </fill_window>
-    </fill_window> -->
-    <in_build id="slide_1" class="blockedElement"/>
-    <vue_footer class="hiddenElement"/>
+
+    <!-- <in_build id="slide_1" class="blockedElement"/> -->
+    <vue_footer class="blockedElement hiddenElement"/>
 </template>
 
 <style scoped>
-header {
-    text-align: center;
-    color: #fff;
-
-}
-header strong, header strong span {
-    font-size: 3.5rem;
-    font-weight: bold;
-}
-h2 {
-    text-align: center;
-    color: #fff;
-}
-h2 strong, h2 strong span {
-    font-size: 3rem;
-}
-#contact_flex a{
-    text-decoration: none;
-    color: #0ae1c1;
-    font-size: 1.5rem;
-}
-nav#sideScroll {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 1;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2vh;
-    margin-left: 1rem;
-    list-style: none;
-}
-nav#sideScroll li {
-    position: relative;
-    cursor: pointer;
-}
-nav#sideScroll i {
-    color: #0ae1c1;
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
-}
-nav#sideScroll span {
-    position: absolute;
-    font-size: 1.5rem;
-    background-color: #000;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    top: 40%;
-    left: 2rem;
-    transform: translate(0%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    display: none;
-}
-nav#sideScroll li:hover i {
-    opacity: 1;
-}
-nav#sideScroll li:hover span {
-    opacity: 1;
-    display: block;
-}
-
-@media screen and (max-width: 768px) {
-    #contact_flex a{
-        font-size: 1.2rem;
-    }
-    nav#sideScroll {
-        display: none;
-    }
-}
 </style>
 <style>
 
@@ -194,6 +101,14 @@ nav#sideScroll li:hover span {
 }
 .show-me a {
     cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+}
+h2 strong, h2 strong span {
+    font-size: 3rem;
 }
 
 
