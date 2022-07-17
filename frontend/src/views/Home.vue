@@ -24,9 +24,11 @@ export default {
     },
     data() {
         return {
-            is_mobile: this.screenSize.width < 768,
             views: {'slide_0':'Welcome', 'slide_1':'In Progress'},
         }
+    },
+    computed: {
+        is_mobile() { return this.screenSize.width < 768 },
     },
     methods: {
         scrollToElement(id) {
