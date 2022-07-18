@@ -37,30 +37,43 @@ export default {
 
 
 <template>
-    <flexMiddle :gap="70">
-        <header>
-            <write @animation_finished="finished_writing" :start="true" :delay="1000">
-                <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
-                <h1 class="subtitle">
-                    <flexMiddle :dir="'row'" :change_on_mobile="true">
-                        <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
-                        <span>&nbsp;web developer.</span>
-                    </flexMiddle>
-                </h1>
-            </write>
-        </header>
-        <buttonColumn id="welcome_buttons" :gaps_between_btns="30" :buttons="buttons" class="hiddenElement top"/>
-    </flexMiddle>
+    <section id="Welcome">
+        <flexMiddle :gap="70">
+            <header>
+                <h2 aria-hidden="true">Welcome</h2>
+                <write @animation_finished="finished_writing" :start="true" :delay="1000">
+                    <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
+                    <span class="subtitle">
+                        <flexMiddle :dir="'row'" :change_on_mobile="true">
+                            <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
+                            <span>&nbsp;web developer.</span>
+                        </flexMiddle>
+                    </span>
+                </write>
+            </header>
+            <buttonColumn id="welcome_buttons" :gaps_between_btns="30" :buttons="buttons" class="hiddenElement top"/>
+        </flexMiddle>
+    </section>
 </template>
 
-@<style scoped>
+<style scoped>
 header {
     text-align: center;
-    color: #fff;
+    color: var(--color-text);
+    font-size: 2.5rem;
 
 }
 header strong, header strong span {
-    font-size: 3.5rem;
+    font-size: 1.5em;
     font-weight: bold;
+}
+section {
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 1.5rem;
+    }
 }
 </style>
