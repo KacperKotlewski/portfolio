@@ -15,7 +15,7 @@ export default {
                 // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
                 // { icon:"bi bi-folder-symlink-fill", text:"Repo", link:"https://github.com/KacperKotlewski/portfolio", target:"_blank"},
                 // { icon:"bi bi-envelope-fill", text:"Contact" },
-                { icon:"bi bi-file-earmark-person-fill", text:"Resume", link:"https://drive.google.com/file/d/1YBhvd03l247Sb14V3ZxMpYn-s837tzq_/view?usp=sharing", target:"_blank" }
+                { icon:"bi bi-file-earmark-person-fill", text:"Resume", link:"https://drive.google.com/file/d/1Xjjf1BAECilP2o4teL6_ObpOACCnfDtk/view?usp=sharing", target:"_blank" }
             ],
         }
     },
