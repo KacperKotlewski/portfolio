@@ -4,9 +4,12 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <div class="main">
-    <nav id="topMenu">
-      <!-- <RouterLink to="/">home</RouterLink> -->
-    </nav>
+    <header>
+      <h1 aria-hidden="true">Kacper Kotlewski</h1>
+      <nav id="topMenu">
+        <!-- <RouterLink to="/">home</RouterLink> -->
+      </nav>
+    </header>
 
     <content>
       <RouterView :screenSize='screenSize' />
@@ -59,29 +62,6 @@ nav#topMenu{
 <style>
 @import "@/assets/base.css";
 
-/* width */
-::-webkit-scrollbar {
-  width:7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background-color: inherit;
-  background: #444;
-  width:3px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #777;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
 #app {
   font-weight: normal;
   height: 100vh;
@@ -113,7 +93,7 @@ nav#topMenu a.router-link-exact-active:hover {
 nav#topMenu a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-highlight);
 }
 
 nav#topMenu a:first-of-type {
