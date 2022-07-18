@@ -36,14 +36,14 @@ footer {
     position: static;
     bottom: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-background-muted);
+    color: var(--color-text);
     text-align: center;
     line-height: 50px;
     overflow: hidden;
 }
 footer a {
-    color: #fff;
+    color: var(--color-text);
     text-decoration: none;
 }
 </style>
