@@ -144,7 +144,7 @@ export default {
     color: transparent;
 }
 .cursor {
-   border-left: 1px solid #fff;
+   border-left: 1px solid var(--color-highlight);
 
   animation: blink-animation 0.7s steps(5, start) infinite;
   -webkit-animation: blink-animation 0.7s steps(5, start) infinite;

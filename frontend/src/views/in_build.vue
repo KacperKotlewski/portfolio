@@ -49,7 +49,7 @@ export default {
 
 h2 {
     text-align: center;
-    color: #fff;
+    color: var(--color-text);
 }
 h2 strong, h2 strong span {
     font-size: 3rem;
@@ -66,14 +66,14 @@ h2 i, h2 i span {
     font-size: 3rem;
 }
 #gears i.right {
-    color: #0ae1c1;
+    color: var(--color-highlight);
     -webkit-animation: spin 4s infinite linear;
     top:-3rem;
     left:-2rem;
 }
 #gears i.left {
     top:-1rem;
-    color: #444;
+    color: var(--color-background-muted);
     -webkit-animation: spin-opposite 4s infinite linear;
 }
 

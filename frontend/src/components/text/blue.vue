@@ -18,6 +18,6 @@ export default {
 
 <style>
 span.blue_text {
-    color: #0AE1C1;
+    color: var(--color-highlight);
 }
 </style>

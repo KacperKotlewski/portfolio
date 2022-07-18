@@ -10,7 +10,7 @@ export default {
 
 <style>
 .vl {
-  border-left: 2px solid #0AE1C1;
+  border-left: 2px solid var(--color-highlight);
   height: 100%;
 }
 </style>

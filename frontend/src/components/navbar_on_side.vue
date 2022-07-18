@@ -42,14 +42,14 @@ nav#sideScroll li {
     cursor: pointer;
 }
 nav#sideScroll i {
-    color: #0ae1c1;
+    color: var(--color-highlight);
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
 }
 nav#sideScroll span {
     position: absolute;
     font-size: 1.5rem;
-    background-color: #000;
+    background-color: var(--color-background-muted);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     top: 40%;

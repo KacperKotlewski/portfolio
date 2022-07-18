@@ -33,11 +33,11 @@ export default {
 <style scoped>
 #contact_flex a{
     text-decoration: none;
-    color: #0ae1c1;
+    color: var(--color-highlight);
     font-size: 1.5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: var(--mobile-size)) {
     #contact_flex a{
         font-size: 1.2rem;
     }
