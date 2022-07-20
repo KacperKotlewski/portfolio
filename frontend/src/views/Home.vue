@@ -1,5 +1,5 @@
 <script>
-import fill_window from '../components/fill_window.vue';
+import fill_window from '../components/containers/fill_window.vue';
 import navbar_on_side from '../components/navbar_on_side.vue';
 
 import welcome from './home_views/welcome.vue';

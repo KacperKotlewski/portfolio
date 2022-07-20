@@ -1,5 +1,5 @@
 <script>
-import flexMiddle from '../flex/flex_middle.vue';
+import flexMiddle from '../containers/flex_middle.vue';
 import ButtonComp from './buttons.vue';
 
 export default {

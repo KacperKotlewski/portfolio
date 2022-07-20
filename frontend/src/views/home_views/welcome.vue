@@ -1,7 +1,7 @@
 <script>
 import buttonColumn from '../../components/buttons/buttons_col.vue';
-import flexMiddle from '../../components/flex/flex_middle.vue';
-import fill_window from '../../components/fill_window.vue';
+import flexMiddle from '../../components/containers/flex_middle.vue';
+import fill_window from '../../components/containers/fill_window.vue';
 
 import write from '../../components/text/animation/write.vue';
 import blue_text from '../../components/text/blue.vue';
