@@ -1,9 +1,9 @@
 <script>
 import fill_window from '../components/containers/fill_window.vue';
-import navbar_on_side from '../components/navbar_on_side.vue';
+import navbar_on_side from '../components/sections/navbar_on_side.vue';
 
 import welcome from './home_views/welcome.vue';
-import vue_footer from '../components/footer.vue';
+import vue_footer from '../components/sections/footer.vue';
 import contact from './home_views/contact.vue';
 import in_build from './in_build.vue';
 

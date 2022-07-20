@@ -1,7 +1,7 @@
 <script>
 import flexMiddle from '../../components/containers/flex_middle.vue';
 import fill_window from '../../components/containers/fill_window.vue';
-import contact_form from '../../components/contact_form.vue';
+import contact_form from '../../components/sections/contact_form.vue';
 
 import blue_text from '../../components/text/blue.vue';
 

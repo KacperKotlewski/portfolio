@@ -1,6 +1,6 @@
 <script>
-import flexMiddle from './containers/flex_middle.vue';
-import vl from './vertical_line.vue';
+import flexMiddle from '../containers/flex_middle.vue';
+import vl from '../vertical_line.vue';
 
 export default {
     props: ['screenSize'],
