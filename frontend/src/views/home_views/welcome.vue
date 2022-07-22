@@ -1,5 +1,6 @@
 <script>
 import buttonColumn from '../../components/buttons/buttons_col.vue';
+import ButtonComp from '../../components/buttons/buttons.vue';
 import flexMiddle from '../../components/containers/flex_middle.vue';
 import fill_window from '../../components/containers/fill_window.vue';
 
@@ -25,12 +26,13 @@ export default {
         fill_window,
         write,
         blue_text,
+        ButtonComp,
     },
     methods: {
         finished_writing() {
             this.$emit('animation_finished', true);
         },
-    }
+    },
 }
 </script>
 
@@ -38,37 +40,57 @@ export default {
 
 <template>
     <section id="Welcome">
-        <flexMiddle :gap="70">
-            <header>
-                <h2 aria-disabled="true">Welcome</h2>
-                <write @animation_finished="finished_writing" :start="true" :delay="1000">
-                    <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
-                    <span class="subtitle">
-                        <flexMiddle :dir="'row'" :change_on_mobile="true">
-                            <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
-                            <span>&nbsp;web developer.</span>
-                        </flexMiddle>
-                    </span>
-                </write>
-            </header>
-            <buttonColumn id="welcome_buttons" :gaps_between_btns="30" :buttons="buttons" class="hiddenElement top"/>
-        </flexMiddle>
+        <header>
+            <h2 aria-disabled="true">Welcome</h2>
+            <write @animation_finished="finished_writing" :start="true" :delay="1000">
+                <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
+            </write>
+        </header>
+        <section class="subtitle hiddenElement">
+            <span><span>I am </span><blue_text>K</blue_text><span>acper,</span></span>
+            <span>&nbsp;web developer.</span>
+        </section>
+        <section class="description hiddenElement">
+            about section
+        </section>
+        <div id="btn_read_more" class="hiddenElement"><ButtonComp :text="'Read more about me'" /></div>
     </section>
 </template>
 
 <style scoped>
-header {
-    text-align: center;
+header, .subtitle {
+    text-align: left;
     color: var(--color-text);
     font-size: 2.5rem;
-
 }
 header strong, header strong span {
     font-size: 1.5em;
     font-weight: bold;
 }
-section {
+section#Welcome {
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-template-rows: repeat(9, [col-start] 1fr);
+}
+header{
+    grid-column: 2 / span 6;
+    grid-row: 2 / span 2;
+}
+.subtitle{
+    grid-column: 2 / span 6;
+    grid-row: 3 / span 1;
+}
+.description{
+    grid-column: 2 / span 6;
+    grid-row: 4 / 7;
+}
+#btn_read_more{
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 1;
+}
+#btn_read_more a{
+    height: 10px;
 }
 
 @media screen and (max-width: 768px) {
