@@ -3,6 +3,7 @@ export default {
   props: ['text', 'icon', 'link', 'target'],
   data() {
     return {
+      btn_classes: ['place_holder_in_button', 'text_in_button'],
     }
   }
 }
@@ -10,8 +11,11 @@ export default {
 
 <template>
     <a :href='link' :target="target" class="button">
-      <div class="place_holder_in_button"><i v-if="icon" class="bi" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
-      <div class="text_in_button"><i v-if="icon" class="bi" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
+      <div v-for="cls in btn_classes" :class="cls">
+        <i v-if="icon" class="bi" :class='icon'></i>
+        &nbsp;
+        <span v-if="text">{{ text }}</span>
+      </div>
     </a>
 </template>
 
