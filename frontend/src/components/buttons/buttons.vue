@@ -10,8 +10,8 @@ export default {
 
 <template>
     <a :href='link' :target="target">
-      <div class="place_holder_in_button"><i v-if="icon" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
-      <div class="text_in_button"><i v-if="icon" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
+      <div class="place_holder_in_button"><i v-if="icon" class="bi" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
+      <div class="text_in_button"><i v-if="icon" class="bi" :class='icon'></i>&nbsp;<span v-if="text">{{ text }}</span></div>
     </a>
 </template>
 
