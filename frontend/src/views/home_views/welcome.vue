@@ -40,7 +40,7 @@ export default {
     <section id="Welcome">
         <flexMiddle :gap="70">
             <header>
-                <h2 aria-hidden="true">Welcome</h2>
+                <h2 aria-disabled="true">Welcome</h2>
                 <write @animation_finished="finished_writing" :start="true" :delay="1000">
                     <strong><blue_text>W</blue_text><span>elcome!</span></strong><br/>
                     <span class="subtitle">
