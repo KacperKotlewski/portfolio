@@ -3,7 +3,7 @@ export default {
   props: ['text', 'icon', 'link', 'target'],
   data() {
     return {
-      btn_classes: ['place_holder_in_button', 'text_in_button'],
+      btn_classes: ['hide', 'text_in_button'],
     }
   }
 }
@@ -11,7 +11,7 @@ export default {
 
 <template>
     <a :href='link' :target="target" class="button">
-      <div v-for="cls in btn_classes" :class="cls">
+      <div v-for="cls in btn_classes" :class="cls" :aria-hidden="cls == 'hide'">
         <i v-if="icon" class="bi" :class='icon'></i>
         &nbsp;
         <span v-if="text">{{ text }}</span>
@@ -83,8 +83,5 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
-    a.button > div.place_holder_in_button{
-        color: #0ae1c100;
     }
 </style>
