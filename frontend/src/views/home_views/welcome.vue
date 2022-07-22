@@ -54,6 +54,7 @@ export default {
             about section
         </section>
         <div id="btn_read_more" class="hiddenElement"><ButtonComp :text="'Read more about me'" /></div>
+        <div id="logo"></div>
     </section>
 </template>
 
@@ -91,6 +92,14 @@ header{
 }
 #btn_read_more a{
     height: 10px;
+}
+#logo{
+    grid-column: 8 / span 4;
+    grid-row: 3 / span 4;
+    background: url(@/assets/logo_v1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media screen and (max-width: 768px) {
