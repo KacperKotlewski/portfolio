@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div class="main">
     <header>
-      <h1 aria-hidden="true">Kacper Kotlewski</h1>
+      <h1 aria-disabled="true">Kacper Kotlewski</h1>
       <nav id="topMenu">
         <!-- <RouterLink to="/">home</RouterLink> -->
       </nav>
