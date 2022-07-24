@@ -5,10 +5,17 @@
   --color-background-muted: #303030;
   --color-highlight: #0AE1C1;
   --color-highlight-muted: #47cce9;
+  font-size: 0.9vw;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+  }
+}
+
+@media screen and (orientation: portrait) {
+  :root {
+    font-size: 2vw;
   }
 }
 
@@ -29,7 +36,6 @@ body {
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
