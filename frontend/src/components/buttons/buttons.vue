@@ -10,46 +10,53 @@ export default {
 </script>
 
 <template>
-    <a :href='link' :target="target" class="button">
-      <div v-for="cls in btn_classes" :class="cls" :aria-hidden="cls == 'hide'">
-        <i v-if="icon" class="bi" :class='icon'></i>
-        &nbsp;
-        <span v-if="text">{{ text }}</span>
-      </div>
-    </a>
+  <div>
+      <a :href='link' :target="target" class="button">
+        <div v-for="cls in btn_classes" :class="cls" :aria-hidden="cls == 'hide'">
+          <i v-if="icon" class="bi" :class='icon'></i>
+          &nbsp;
+          <span v-if="text">{{ text }}</span>
+        </div>
+      </a>
+  </div>
 </template>
 
 <style scoped>
     a.button {
         color: #0AE1C1;
-        font-size: 1rem;
-        transition: 0.4s;
+        font-size: 1.3rem;
+        transition: 0.2s;
         text-align: left;
         text-decoration: none;
         position: relative;
     }
+    @media screen and (orientation: portrait) {
+      a.button {
+          font-size: 1rem;
+      }
+    }
     a.button::before{
         content: '';
         display: block;
-        width: 2em;
-        height: 60%;
+        width: 3em;
+        height: 2em;
         position: absolute;
         top: 0;
         left: 0;
         background-color: rgba(0,0,0,1);
-        transform: translate(2em, 0.5em);
-        transition: all 0.3s ease-in;
+        transform: translate(-0.5em, 0.5em);
+        transition: all 0.1s ease-in;
     }
     a.button::after{
         content: '';
         display: block;
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         border: 3px solid #0ae1c140;
-        transform: translate(0.5em, 0.2em);
+        transform: translate(0.9em, -0.5em);
         transition: all 0.2s;
     }
     a.button:hover::before {
