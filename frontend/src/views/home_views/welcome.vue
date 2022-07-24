@@ -60,9 +60,12 @@ export default {
 
 <style scoped>
 header, .subtitle {
-    text-align: left;
     color: var(--color-text);
     font-size: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 header strong, header strong span {
     font-size: 1.5em;
@@ -76,19 +79,20 @@ section#Welcome {
 }
 header{
     grid-column: 2 / span 6;
-    grid-row: 2 / span 2;
+    grid-row: 2 / span 1;
 }
 .subtitle{
     grid-column: 2 / span 6;
     grid-row: 3 / span 1;
 }
 .description{
+    margin: 20px 0;
     grid-column: 2 / span 6;
-    grid-row: 4 / 7;
+    grid-row: 4 / span 4;
 }
 #btn_read_more{
     grid-column: 2 / span 2;
-    grid-row: 7 / span 1;
+    grid-row: 8 / span 1;
 }
 #btn_read_more a{
     height: 10px;
@@ -102,9 +106,36 @@ header{
     background-position: center;
 }
 
-@media screen and (max-width: 768px) {
-    header {
-        font-size: 1.5rem;
+@media screen and (orientation: portrait) {
+
+    section#Welcome {
+        grid-template-columns: repeat(6, [col-start] 1fr);
+        grid-template-rows: repeat(18, [col-start] 1fr);
+    }
+
+    header, .subtitle {
+        justify-content: center;
+    }
+    header{
+        grid-column: 2 / span 4;
+        grid-row: 2 / span 2;
+    }
+    .subtitle{
+        grid-column: 2 / span 4;
+        grid-row: 4 / span 1;
+    }
+    #logo{
+        grid-column: 2 / span 4;
+        grid-row: 6 / span 3;
+    }
+    .description{
+        grid-column: 2 / span 4;
+        grid-row: 9 / span 5;
+    }
+    #btn_read_more{
+        grid-column: 3 / span 2;
+        grid-row: 15 / span 1;
     }
 }
+
 </style>
