@@ -61,8 +61,7 @@ nav#topMenu{
 
 <style lang="scss">
 @import "@/assets/base.scss";
-</style>
-<style>
+
 #app {
   font-weight: normal;
   height: 100vh;
@@ -81,23 +80,24 @@ nav#topMenu {
   text-align: right;
   margin-top: 2rem;
   margin-right: 2rem;
-}
+  z-index:999;
+  a
+  {
+    &.router-link-exact-active {
+      color: var(--color-text);
+      &:hover {
+        background-color: transparent;
+      }
+    }
 
-nav#topMenu a.router-link-exact-active {
-  color: var(--color-text);
-}
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid var(--color-highlight);
+    color: var(--color-text-muted);
 
-nav#topMenu a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav#topMenu a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-highlight);
-}
-
-nav#topMenu a:first-of-type {
-  border: 0;
+    &:first-of-type {
+      border: 0;
+    }
+  }
 }
 </style>
