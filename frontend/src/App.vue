@@ -59,9 +59,10 @@ nav#topMenu{
 }
 </style>
 
+<style lang="scss">
+@import "@/assets/base.scss";
+</style>
 <style>
-@import "@/assets/base.css";
-
 #app {
   font-weight: normal;
   height: 100vh;
