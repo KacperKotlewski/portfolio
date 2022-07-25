@@ -79,37 +79,30 @@ export default {
     <vue_footer class="blockedElement hiddenElement"/>
 </template>
 
-<style scoped>
-</style>
-<style>
+<style lang="scss">
 
 .hiddenElement {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    /* position: relative; */
+    a {
+        cursor: default;
+    }
 }
 .blockedElement {
     display: none;
 }
-
 .show-me {
     opacity: 1;
     display: block;
+    a {
+        cursor: pointer;
+    }
 }
-.hiddenElement a {
-    cursor: default;
-}
-.show-me a {
-    cursor: pointer;
-}
-
 h2 {
     text-align: center;
     color: #fff;
+    strong, strong span {
+        font-size: 3rem;
+    }
 }
-h2 strong, h2 strong span {
-    font-size: 3rem;
-}
-
-
 </style>
