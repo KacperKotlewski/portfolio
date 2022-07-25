@@ -58,52 +58,53 @@ export default {
     </section>
 </template>
 
-<style scoped>
-header, .subtitle {
-    color: var(--color-text);
-    font-size: 2.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-header strong, header strong span {
-    font-size: 1.5em;
-    font-weight: bold;
-}
+<style scoped lang="scss">
+
 section#Welcome {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-template-rows: repeat(9, [col-start] 1fr);
-}
-header{
-    grid-column: 2 / span 6;
-    grid-row: 2 / span 1;
-}
-.subtitle{
-    grid-column: 2 / span 6;
-    grid-row: 3 / span 1;
-}
-.description{
-    margin: 20px 0;
-    grid-column: 2 / span 6;
-    grid-row: 4 / span 4;
-}
-#btn_read_more{
-    grid-column: 2 / span 2;
-    grid-row: 8 / span 1;
-}
-#btn_read_more a{
-    height: 10px;
-}
-#logo{
-    grid-column: 8 / span 4;
-    grid-row: 3 / span 4;
-    background: url(@/assets/logo_v1.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    header, .subtitle {
+        color: var(--color-text);
+        font-size: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        strong, strong span {
+            font-size: 1.5em;
+        }
+    }
+    header{
+        grid-column: 2 / span 6;
+        grid-row: 2 / span 1;
+    }
+    .subtitle{
+        grid-column: 2 / span 6;
+        grid-row: 3 / span 1;
+    }
+    .description{
+        margin: 20px 0;
+        grid-column: 2 / span 6;
+        grid-row: 4 / span 4;
+    }
+    #btn_read_more{
+        grid-column: 2 / span 2;
+        grid-row: 8 / span 1;
+        a{
+            height: 10px;
+        }
+    }
+    #logo{
+        grid-column: 8 / span 4;
+        grid-row: 3 / span 4;
+        background: url(@/assets/logo_v1.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 @media screen and (orientation: portrait) {
@@ -111,30 +112,29 @@ header{
     section#Welcome {
         grid-template-columns: repeat(6, [col-start] 1fr);
         grid-template-rows: repeat(18, [col-start] 1fr);
-    }
-
-    header, .subtitle {
-        justify-content: center;
-    }
-    header{
-        grid-column: 2 / span 4;
-        grid-row: 2 / span 2;
-    }
-    .subtitle{
-        grid-column: 2 / span 4;
-        grid-row: 4 / span 1;
-    }
-    #logo{
-        grid-column: 2 / span 4;
-        grid-row: 6 / span 3;
-    }
-    .description{
-        grid-column: 2 / span 4;
-        grid-row: 9 / span 5;
-    }
-    #btn_read_more{
-        grid-column: 3 / span 2;
-        grid-row: 15 / span 1;
+        header, .subtitle {
+            justify-content: center;
+        }
+        header{
+            grid-column: 2 / span 4;
+            grid-row: 2 / span 2;
+        }
+        .subtitle{
+            grid-column: 2 / span 4;
+            grid-row: 4 / span 1;
+        }
+        #logo{
+            grid-column: 2 / span 4;
+            grid-row: 6 / span 3;
+        }
+        .description{
+            grid-column: 2 / span 4;
+            grid-row: 9 / span 5;
+        }
+        #btn_read_more{
+            grid-column: 3 / span 2;
+            grid-row: 15 / span 1;
+        }
     }
 }
 
