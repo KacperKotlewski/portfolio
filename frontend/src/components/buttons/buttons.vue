@@ -3,15 +3,15 @@ export default {
   props: ['text', 'icon', 'link', 'target'],
   data() {
     return {
-      btn_classes: ['hide', 'text_in_button'],
+      btn_classes: ['hide', 'visable_text'],
     }
   }
 }
 </script>
 
 <template>
-  <div>
-      <a :href='link' :target="target" class="button">
+  <div class="button">
+      <a :href='link' :target="target">
         <div v-for="cls in btn_classes" :class="cls" :aria-hidden="cls == 'hide'">
           <i v-if="icon" class="bi" :class='icon'></i>
           &nbsp;
@@ -21,74 +21,76 @@ export default {
   </div>
 </template>
 
-<style scoped>
-    a.button {
-        color: #0AE1C1;
-        font-size: 1.3rem;
-        transition: 0.2s;
-        text-align: left;
-        text-decoration: none;
-        position: relative;
+<style scoped lang="scss">
+  div.button{
+  a {
+    color: var(--color-highlight);
+    font-size: 1.3rem;
+    transition: 0.2s;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    // transition for all elements
+    &::before, &::after, & > div{
+      transition-duration: 0.2s;
+      transition-property: transform, opacity;
     }
-    @media screen and (orientation: portrait) {
-      a.button {
-          font-size: 1rem;
-      }
-    }
-    a.button::before{
-        content: '';
-        display: block;
-        width: 3em;
-        height: 2em;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0,0,0,1);
-        transform: translate(-0.5em, 0.5em);
-        transition: all 0.1s ease-in;
-    }
-    a.button::after{
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 3px solid #0ae1c140;
-        transform: translate(0.9em, -0.5em);
-        transition: all 0.2s;
-    }
-    a.button:hover::before {
-      width: 100%;
-      height: 100%;
-      transform: translate(0em, 0em);
-    }
-    a.button:hover::after {
-      width: 100%;
-      height: 100%;
-      transform: translate(0em, 0em);
-      border-color: #0AE1C1;
-    }
-    a.button > div{
+    //text boxes
+    & > div{
       padding: 0.5em 1em;
       width: 100%;
       height: 100%;
-      transition: all 0.3s ease-in;
       display: flex;
       align-items: center;
       justify-content: left;
+      &.visable_text{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
     }
-    a.button > div.text_in_button{
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    //visual elements
+    &::before, &::after{
+      content: '';
+      display: block;
       position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
     }
-    a.button:hover > div.text_in_button{
-      font-size: 1.2em;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    &::before{
+      background-color: var(--color-background-hard);
+      transform: translate(-0.5em, 0.5em) scale(0.95);
     }
+    &::after{
+      border: 3px solid var(--color-highlight);
+      opacity: 0.6;
+      transform: translate(0.9em, -0.5em);
+    }
+    //on hover animations
+    &:hover{
+      &::before, &::after{
+        transform: translate(0em, 0em);
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+      &::after {
+        opacity: 1;
+      }
+      & > div.visable_text{
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+    //mobile
+    @media screen and (orientation: portrait) {
+      & {
+          font-size: 1rem;
+      }
+    }
+  }
+  }
 </style>
