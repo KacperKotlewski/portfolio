@@ -23,9 +23,10 @@ export default {
 
 <style scoped lang="scss">
   div.button{
+    margin:0.5em;
   a {
     color: var(--color-highlight);
-    font-size: 1.3rem;
+    font-size: 1.3em;
     transition: 0.2s;
     text-align: left;
     text-decoration: none;
@@ -61,13 +62,13 @@ export default {
       left: 0;
     }
     &::before{
-      background-color: var(--color-background-hard);
+      background-color: var(--color-background-muted);
       transform: translate(-0.5em, 0.5em) scale(0.95);
     }
     &::after{
       border: 3px solid var(--color-highlight);
       opacity: 0.6;
-      transform: translate(0.9em, -0.5em);
+      transform: translate(0.7em, -0.5em);
     }
     //on hover animations
     &:hover{
@@ -88,7 +89,7 @@ export default {
     //mobile
     @media screen and (orientation: portrait) {
       & {
-          font-size: 1rem;
+          font-size: 1em;
       }
     }
   }

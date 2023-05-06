@@ -40,9 +40,14 @@ a {
     width:var(--size_of_btns);
 }
 
+div.flex_box{
+    justify-content: flex-start;
+}
+
 @media screen and (max-width: 768px) {
     div.flex_box {
-        flex-direction: column;
+        /* flex-direction: column; */
+        justify-content: center;
     }
 }
 </style>
