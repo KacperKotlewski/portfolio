@@ -1,11 +1,11 @@
 <script>
-import buttonColumn from "../../components/buttons/buttons_col.vue";
-import ButtonComp from "../../components/buttons/buttons.vue";
-import flexMiddle from "../../components/containers/flex_middle.vue";
-import fill_window from "../../components/containers/fill_window.vue";
+import buttonColumn from "../../../components/buttons/buttons_col.vue";
+import ButtonComp from "../../../components/buttons/buttons.vue";
+import flexMiddle from "../../../components/containers/flex_middle.vue";
+import fill_window from "../../../components/containers/fill_window.vue";
 
-import write from "../../components/text/animation/write.vue";
-import blue_text from "../../components/text/blue.vue";
+import write from "../../../components/text/animation/write.vue";
+import blue_text from "../../../components/text/blue.vue";
 
 export default {
   data() {

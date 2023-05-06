@@ -1,11 +1,10 @@
 <script>
-import fill_window from "../components/containers/fill_window.vue";
-import navbar_on_side from "../components/sections/navbar_on_side.vue";
+import fill_window from "../../components/containers/fill_window.vue";
+import navbar_on_side from "../../components/sections/navbar_on_side.vue";
 
-import welcome from "./home_views/welcome.vue";
-import vue_footer from "../components/sections/footer.vue";
-import contact from "./home_views/contact.vue";
-import in_build from "./in_build.vue";
+import welcome from "./subviews/welcome.vue";
+import vue_footer from "../../components/sections/footer.vue";
+import in_build from "../in_build.vue";
 
 import { registerRuntimeHelpers } from "@vue/compiler-core";
 
@@ -18,7 +17,6 @@ export default {
     vue_footer,
     in_build,
     welcome,
-    contact,
   },
   data() {
     return {
