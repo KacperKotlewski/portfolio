@@ -1,5 +1,4 @@
 <script>
-import emailjs from 'emailjs-com';
 
 export default{
     data() {
@@ -16,13 +15,14 @@ export default{
         postData(e){
             e.preventDefault();
             try {
-                emailjs.send(import.meta.env.EMAILJS_SERVICE_ID, import.meta.env.EMAILJS_TEMPLATE_ID, e.target,
-                import.meta.env.EMAILJS_USER_ID, {
-                    name: this.post.name,
-                    subject: this.post.subject,
-                    email: this.post.email,
-                    message: this.post.message
-                })
+                throw new Error('This is an error')
+                // emailjs.send(import.meta.env.EMAILJS_SERVICE_ID, import.meta.env.EMAILJS_TEMPLATE_ID, e.target,
+                // import.meta.env.EMAILJS_USER_ID, {
+                //     name: this.post.name,
+                //     subject: this.post.subject,
+                //     email: this.post.email,
+                //     message: this.post.message
+                // })
 
                 this.post.name = null
                 this.post.email = null
