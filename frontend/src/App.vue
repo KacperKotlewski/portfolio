@@ -98,9 +98,13 @@ nav#topMenu {
     padding: 0 1rem;
     border-left: 1px solid var(--color-highlight);
     color: var(--color-text-muted);
+    background-color: var(--color-background);
 
     &:first-of-type {
       border: 0;
+    }
+    &:last-child {
+      margin-right: 7px;
     }
   }
 }
