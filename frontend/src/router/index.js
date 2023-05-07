@@ -13,6 +13,11 @@ const router = createRouter({
       path: "/cv/",
       name: "cv",
       component: () => import("../views/cv/CV_view.vue")
+    },
+    {
+      path: "/cv-fullscreen/",
+      name: "cv-only",
+      component: () => import("../views/cv/CV_ONLY.vue")
     }
   ],
 });
