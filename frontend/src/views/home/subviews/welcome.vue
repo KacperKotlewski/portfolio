@@ -29,8 +29,8 @@ export default {
         {
           icon: "bi-file-earmark-person-fill",
           text: "Resume",
-          link: "https://drive.google.com/file/d/1Xjjf1BAECilP2o4teL6_ObpOACCnfDtk/view?usp=sharing",
-          target: "_blank",
+          type: "router",
+          link: "/cv",
         },
       ],
     };

@@ -30,6 +30,7 @@ export default {
         :icon="item.icon"
         :link="item.link"
         :target="item.target"
+        :type="item.type"
     />
 </flexMiddle>
 </div>
