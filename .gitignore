@@ -166,3 +166,5 @@ coverage
 *.db
 .vscode/
 venv*/
+
+package-lock.json
