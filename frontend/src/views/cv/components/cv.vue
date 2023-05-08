@@ -4,7 +4,7 @@ const agreement_text =
 </script>
 
 <template>
-  <div class="w-fit h-fit">
+  <div class="w-fit h-fit overflow-auto">
     <div class="page flex">
       <section
         class="px-0 py-6 slate-bg text-gray-300 h-full w-4/12 text-center flex flex-col justify-around items-center"
@@ -346,6 +346,11 @@ const agreement_text =
   </div>
 </template>
 <style lang="scss">
+@media screen and (orientation: portrait) {
+  :root {
+    --a4-base-on-width: ;
+  }
+}
 @mixin a4-page-default {
   --base-page-size: 0;
   --page-scale: 1;
@@ -390,12 +395,6 @@ const agreement_text =
 }
 </style>
 <style scoped lang="scss">
-@media print {
-  .slate-bg {
-    background-color: rgb(30 41 59) !important;
-    print-color-adjust: exact;
-  }
-}
 .slate-bg {
   background-color: rgb(30 41 59);
 }
