@@ -14,7 +14,7 @@ export default {
         {
           icon: "bi-linkedin",
           text: "LinkedIn",
-          link: "https://www.linkedin.com/in/kacper-kotlewski-94b932168/",
+          link: "https://www.linkedin.com/in/kacper-kotlewski/",
           target: "_blank",
         },
         {
