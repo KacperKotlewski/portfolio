@@ -4,7 +4,7 @@ import CV_component from "./components/cv.vue";
 <template>
   <CV_component />
 </template>
-<style>
+<style lang="scss">
 :root {
   --a4-base-on-width: ;
 }

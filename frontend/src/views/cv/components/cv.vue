@@ -148,21 +148,56 @@
   </div>
 </template>
 <style lang="scss">
+@mixin a4-page-default {
+  --base-page-size: 0;
+  --page-scale: 1;
+  --page-size-scaler: calc(var(--page-scale) * var(--base-page-size));
+  --page-height: 0;
+  --a4_aspect_ratio: 1.414;
+  --text_height_ratio: calc(10 / 750);
+  --page-text-size: calc(var(--page-height) * var(--text_height_ratio));
+}
+@mixin a4-page-set {
+  // width based
+  --page-width-when-width-based: var(--a4-base-on-width) var(--page-size-scaler);
+  --page-height-when-width-based: var(--a4-base-on-width)
+    calc(var(--page-size-scaler) * var(--a4_aspect_ratio));
+  --page-size-when-width-based: var(--a4-base-on-width) 100vw;
+  // height based
+  --page-width-when-height-based: calc(
+    var(--page-size-scaler) / var(--a4_aspect_ratio)
+  );
+  --page-height-when-height-based: var(--page-size-scaler);
+  --page-size-when-height-based: 100vh;
+}
+@mixin a4-page-choose {
+  --page-width: var(
+    --page-width-when-width-based,
+    var(--page-width-when-height-based)
+  );
+  --page-height: var(
+    --page-height-when-width-based,
+    var(--page-height-when-height-based)
+  );
+  --base-page-size: var(
+    --page-size-when-width-based,
+    var(--page-size-when-height-based)
+  );
+}
+
 :root {
-  --a4-page-size: 100vh;
+  @include a4-page-default;
+  @include a4-page-set;
+  @include a4-page-choose;
 }
 </style>
 <style scoped lang="scss">
-$a4_aspect_ratio: 1.414;
-$text_ratio_to_vh: 0.0133;
-$text_size: calc(var(--a4-page-size) * $text_ratio_to_vh);
-
 div.page {
   background-color: #fff;
   color: #000;
-  font-size: $text_size;
-  height: var(--a4-page-size);
-  width: calc(var(--a4-page-size) / $a4_aspect_ratio);
+  font-size: var(--page-text-size);
+  height: var(--page-height);
+  width: var(--page-width);
 }
 
 p {

@@ -66,8 +66,8 @@ export default {
     },
     applyNewScale() {
       document.documentElement.style.setProperty(
-        "--a4-page-size",
-        `calc(100vh * ${this.zoomScale})`
+        "--page-scale",
+        `${this.zoomScale}`
       );
     },
   },
