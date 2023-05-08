@@ -139,5 +139,5 @@ export default {
     <CV_component id="CV" />
   </div>
   <!-- <in_build id="slide_1" class="blockedElement"/> -->
-  <vue_footer class="blockedElement" />
+  <vue_footer class="" />
 </template>
