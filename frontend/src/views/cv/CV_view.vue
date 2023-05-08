@@ -7,6 +7,9 @@ import custom_button from "../../components/buttons/buttons.vue";
 
 import CV_component from "./components/cv.vue";
 
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+
 export default {
   props: ["screenSize"],
   components: {
@@ -44,8 +47,9 @@ export default {
         {
           text: "download",
           icon: "bi-download",
-          link: "/cv/download",
-          target: "_blank",
+          action: () => {
+            this.executePrint();
+          },
         },
       ],
       zoomScale: 1,
@@ -54,6 +58,46 @@ export default {
   mounted() {},
   computed: {},
   methods: {
+    executePrint() {
+      const zoom = this.zoomScale;
+      this.zoomScale = 1;
+      this.cv_based_on_width(true);
+      this.applyNewScale();
+
+      this.printDocument().then(() => {
+        this.zoomScale = zoom;
+        this.cv_based_on_width(false);
+        this.applyNewScale();
+      });
+    },
+    async printDocument() {
+      var elementHTML = document.querySelector("#CV");
+      var page_count = elementHTML.querySelectorAll(".page").length;
+      await html2canvas(elementHTML).then(function (canvas) {
+        var pdf = new jsPDF("p", "mm", "a4");
+        var myImage = canvas.toDataURL("image/jpeg,1.0");
+
+        var imgWidth = pdf.internal.pageSize.getWidth();
+        var imgHeight = pdf.internal.pageSize.getHeight() * page_count;
+
+        for (let page = 0; page < page_count; page++) {
+          if (page != 0) {
+            pdf.addPage();
+          }
+          const y_offset = -page * (imgHeight / page_count);
+          pdf.addImage(myImage, "png", 0, y_offset, imgWidth, imgHeight);
+        }
+        pdf.save(`Kacper Kotlewski CV.pdf`);
+      });
+      return;
+    },
+    cv_based_on_width(bool) {
+      if (bool) {
+        document.documentElement.style.setProperty("--a4-base-on-width", " ");
+      } else {
+        document.documentElement.style.removeProperty("--a4-base-on-width");
+      }
+    },
     zoomIn() {
       this.zoomScale += 0.1;
       if (this.zoomScale > 2) this.zoomScale = 2;
@@ -92,7 +136,7 @@ export default {
   <div
     class="page-container min-h-full w-full flex flex-row justify-center item-center flex-wrap gap-4"
   >
-    <CV_component />
+    <CV_component id="CV" />
   </div>
   <!-- <in_build id="slide_1" class="blockedElement"/> -->
   <vue_footer class="blockedElement" />
