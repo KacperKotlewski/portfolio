@@ -1,46 +1,51 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+// import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <div class="main">
     <header>
-      <h1 aria-hidden="true">Kacper Kotlewski</h1>
+      <h1 aria-disabled="true">Kacper Kotlewski</h1>
       <nav id="topMenu">
-        <!-- <RouterLink to="/">home</RouterLink> -->
+        <router-link to="/">home</router-link>
+        <router-link to="/cv/">cv</router-link>
       </nav>
     </header>
 
     <content>
-      <RouterView :screenSize='screenSize' />
+      <!-- <RouterView :screenSize='screenSize' /> -->
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="in-out">
+          <component :is="Component" :screenSize="screenSize" />
+        </transition>
+      </router-view>
     </content>
   </div>
 </template>
-
 
 <script>
 export default {
   data() {
     return {
-      screenSize : {
+      screenSize: {
         width: document.documentElement.clientWidth,
-        height: document.documentElement.clientHeight
-      }
-    }
+        height: document.documentElement.clientHeight,
+      },
+    };
   },
   mounted() {
-    window.addEventListener('resize', this.getDimensions);
+    window.addEventListener("resize", this.getDimensions);
   },
   unmounted() {
-    window.removeEventListener('resize', this.getDimensions);
+    window.removeEventListener("resize", this.getDimensions);
   },
   methods: {
     getDimensions() {
       this.screenSize.width = document.documentElement.clientWidth;
       this.screenSize.height = document.documentElement.clientHeight;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -53,14 +58,14 @@ div.main {
   width: 100%;
   height: 100%;
 }
-nav#topMenu{
+nav#topMenu {
   position: fixed;
   width: 100%;
 }
 </style>
 
-<style>
-@import "@/assets/base.css";
+<style lang="scss">
+@import "@/assets/base.scss";
 
 #app {
   font-weight: normal;
@@ -80,23 +85,27 @@ nav#topMenu {
   text-align: right;
   margin-top: 2rem;
   margin-right: 2rem;
-}
+  z-index: 999;
+  a {
+    &.router-link-exact-active {
+      color: var(--color-text);
+      &:hover {
+        background-color: transparent;
+      }
+    }
 
-nav#topMenu a.router-link-exact-active {
-  color: var(--color-text);
-}
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid var(--color-highlight);
+    color: var(--color-text-muted);
+    background-color: var(--color-background);
 
-nav#topMenu a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav#topMenu a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-highlight);
-}
-
-nav#topMenu a:first-of-type {
-  border: 0;
+    &:first-of-type {
+      border: 0;
+    }
+    &:last-child {
+      margin-right: 7px;
+    }
+  }
 }
 </style>
