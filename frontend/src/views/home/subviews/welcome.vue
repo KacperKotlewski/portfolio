@@ -72,7 +72,7 @@ export default {
 
       </p>
       <p>
-        <strong>10 years of passion</strong>
+        <strong>9 years of passion</strong>
         to programming
       </p>
       <p>
@@ -80,7 +80,7 @@ export default {
         with web development
       </p>
       <p>
-        <strong>4 years of experience</strong>
+        <strong>3 years of experience</strong>
         with clients
       </p>
       <p>
