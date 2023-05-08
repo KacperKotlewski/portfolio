@@ -51,6 +51,14 @@ const agreement_text = "I hereby consent to the processing of my personal data f
               kacperkotlewski.pl
             </a>
             <a
+              href="https://github.com/KacperKotlewski"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-em-s underline text-highlight-muted"
+            >
+              github.com/KacperKotlewski
+            </a>
+            <a
               href="https://www.linkedin.com/in/kacper-kotlewski/"
               target="_blank"
               rel="noopener noreferrer"
