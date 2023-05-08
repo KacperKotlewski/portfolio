@@ -1,5 +1,6 @@
 <script setup>
-const agreement_text = "I hereby consent to the processing of my personal data for the purposes necessary to carry out the recruitment process (in accordance with the Act of 10 May 2018 on the protection of personal data (Journal of Laws of 2018, item 1000) and in accordance with the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (GDPR)).";
+const agreement_text =
+  "I hereby consent to the processing of my personal data for the purposes necessary to carry out the recruitment process (in accordance with the Act of 10 May 2018 on the protection of personal data (Journal of Laws of 2018, item 1000) and in accordance with the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (GDPR)).";
 </script>
 
 <template>
@@ -8,14 +9,16 @@ const agreement_text = "I hereby consent to the processing of my personal data f
       <section
         class="px-0 py-6 slate-bg text-gray-300 h-full w-4/12 text-center flex flex-col justify-around items-center"
       >
-        <h2>Kacper Kotlewski</h2>
-        <span>Web Software developer</span>
-        <p>
+        <article>
+          <h2>Kacper Kotlewski</h2>
+          <span>Web Software developer</span>
+        </article>
+        <article>
           <span>
-            <strong>Ruda Śląska</strong>, Katowice, Gliwice, Częstochowa
+            <strong>Silesia region</strong>,
+            <strong class="opacity-60">Poland</strong>
           </span>
-          <span class="opacity-60">, <strong>Poland</strong> </span>
-        </p>
+        </article>
         <hr />
         <!-- profile -->
         <article>
@@ -80,25 +83,22 @@ const agreement_text = "I hereby consent to the processing of my personal data f
         <!-- languages -->
         <article>
           <h3>Languages</h3>
-          <ul>
-            <li><strong>Polish</strong> - Native</li>
-            <li><strong>English</strong> - B2</li>
-          </ul>
-          <p>Additionally I have an very basic knowledge of:</p>
-          <ul>
-            <li>German - A1/A2</li>
-            <li>Chinese - HSK1</li>
-            <li>Italian - mostly food names😅</li>
-            <li>Japanese - below N5</li>
-          </ul>
+          <p>
+            <strong>Polish</strong> - Native<br>
+            <strong>English</strong> - B2
+          </p>
         </article>
         <!-- Interests -->
         <article>
           <h3>Interests/Hobbies</h3>
           <p class="px-4">
-            My GF💘, Marvel/Superheros🦸, movies/series🎬, Travels✈️, Infinity
-            growth🚩, Self improvement🧩, Investments💵, Business💡, Tools🪛,
-            AI🤖, Programming🧑‍💻, Web development📄, Web design🎆, UI/UX🖼️.
+            <span>Marvel/Superheros🦸</span>, <span>Movies/Series🎬</span>,
+            <span>Travels✈️</span>, <span>Languages💬</span>,
+            <span>Infinity growth🚩</span>, <span>Self improvement🧩</span>,
+            <span>Investments💵</span>, <span>Business💡</span>,
+            <span>Tools🪛</span>, <span>AI🤖</span>, <span>Programming🧑‍💻</span>,
+            <span>Web development📄</span>, <span>Web design🎆</span>,
+            <span>UI/UX🖼️</span>, <span>IoT🛰️</span>.
           </p>
         </article>
       </section>
@@ -248,6 +248,100 @@ const agreement_text = "I hereby consent to the processing of my personal data f
           {{ agreement_text }}
         </div>
       </section>
+    </div>
+    <div class="page px-4 py-6 flex flex-col justify-center items-center">
+      <h3 class="text-center pb-8">Projects</h3>
+      <ul>
+        <li
+          class="flex flex-row w-full border-y-2 border-stone-400 py-8 text-em-xl items-center"
+        >
+          <span class="w-3/12">
+            <a href="https://www.lyzewa.pl/ " class="underline text-blue-800"
+              >www.lyzewa.pl</a
+            >
+          </span>
+          <span class="desc flex-1">
+            Portfolio for a photographer, stack: python, Django, HTML, SASS,
+            JavaScript, jQuery, SQLite3, Bootstrap4, hosting: pythonanywhere.com
+            + ovh domain. <br />
+            After 3 years of hosting this page, other web developer recreate
+            page, 90% of design is made by me.<br />
+            development time: 2-month - 2020
+          </span>
+        </li>
+        <li
+          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+        >
+          <span class="w-3/12">
+            <a
+              href="https://www.inbie.pl/courses/"
+              class="underline text-blue-800"
+              >www.inbie.pl/courses/</a
+            >
+          </span>
+          <span class="desc flex-1">
+            Course page for INBIE about IT - support/mentoring in the process of
+            creation of this page, Bootstrap5, HTML, CSS <br />
+            development time: 2-days - 2022
+          </span>
+        </li>
+        <li
+          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+        >
+          <span class="w-3/12">
+            <a
+              href="http://enforse.inbie.pl/corner/"
+              class="underline text-blue-800"
+              >www.inbie.pl/corner/</a
+            >
+          </span>
+          <span class="desc flex-1">
+            Page for workshop for INBIE for “Entrepreneurial MINDSET” project.
+            workshops presentation:
+            <a href="https://www.youtube.com/watch?v=O4brah-Z6QY"
+              >www.youtube.com/watch?v=O4brah-Z6QY</a
+            ><br />
+            Flask, JSON as fast alternative for DB, Bootstrap5, HTML, SCSS,
+            JavaScript <br />
+            development time: 3-days - 2022
+          </span>
+        </li>
+        <li
+          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+        >
+          <span class="w-3/12">
+            <a
+              href="https://kacperkotlewski.pl/"
+              class="underline text-blue-800"
+              >www.kacperkotlewski.pl</a
+            >
+          </span>
+          <span class="desc flex-1">
+            My own portfolio, stack: Vue.js, JavaScript, HTML, CSS, deployed on
+            Vercel(on edge). Currently in build. Planed backend: flask<br />
+            development time: 1-month - 2022
+          </span>
+        </li>
+        <li
+          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+        >
+          <span class="w-3/12 warp">
+            <a
+              href="https://github.com/KacperKotlewski/Cars_API"
+              class="underline text-blue-800"
+              >github.com/KacperKotlewski<br />/Cars_API</a
+            >
+          </span>
+          <span class="desc flex-1">
+            REST API written in DRF, the goal of API was to collect car ratings
+            from users, checking in another API that car exists and if so add
+            rate to the database, also it shows the average of all rates for
+            each car. <br />
+            Python, Django, DRF, PostgreSQL, Docker <br />
+            development time: 1-week - 2021
+          </span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
