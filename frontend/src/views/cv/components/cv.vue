@@ -1,6 +1,14 @@
 <script setup>
-const agreement_text =
-  "I hereby consent to the processing of my personal data for the purposes necessary to carry out the recruitment process (in accordance with the Act of 10 May 2018 on the protection of personal data (Journal of Laws of 2018, item 1000) and in accordance with the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (GDPR)).";
+const company_name = "";
+const phone_number = "";
+
+const agreement_text = (() => {
+  const directed_agreement = `I hereby give consent for my personal data to be processed by ${company_name} for the purpose of conducting recruitment for the position for which I am applying. I also consent to processing of my personal data by ${company_name} for the purposes of any future recruitment processes.`;
+  const default_agreement =
+    "I agree to the processing of personal data provided in this document for realizing the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).";
+
+  return company_name !== "" ? directed_agreement : default_agreement;
+})();
 </script>
 
 <template>
@@ -26,9 +34,9 @@ const agreement_text =
           <p>
             22 years old software developer👨,<br />
             9 years of passion in programming💻,<br />
-            3 years as freelance🐬, <br />
+            3 years as freelancer🐬, <br />
             2 years as worker💼, <br />
-            2 years as team leader in students projects⚓
+            2 years as team leader in students projects⚓,
           </p>
           <p>
             6 years of HTML & CSS, <br />
@@ -37,7 +45,7 @@ const agreement_text =
             3 years of Django, <br />
             2 years of REST API, <br />
             1 year of Vue.js & TypeScript, <br />
-            1 year of unit Testing
+            1 year of unit Testing.
           </p>
         </article>
         <hr />
@@ -51,32 +59,37 @@ const agreement_text =
               rel="noopener noreferrer"
               class="text-em-s underline text-highlight-muted"
             >
-              kacperkotlewski.pl
-            </a>
+              kacperkotlewski.pl </a
+            ><br />
             <a
               href="https://github.com/KacperKotlewski"
               target="_blank"
               rel="noopener noreferrer"
               class="text-em-s underline text-highlight-muted"
             >
-              github.com/KacperKotlewski
-            </a>
+              github.com/KacperKotlewski </a
+            ><br />
             <a
               href="https://www.linkedin.com/in/kacper-kotlewski/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-em-s underline text-highlight-muted"
             >
-              www.linkedin.com/in/kacper-kotlewski
-            </a>
+              www.linkedin.com/in/kacper-kotlewski </a
+            ><br />
             <a
               href="mailto:kacperkotlewski.kontakt@gmail.com"
               class="text-em-s underline text-highlight-muted"
             >
-              kacperkotlewski.kontakt@gmail.com
-            </a>
+              kacperkotlewski.kontakt@gmail.com </a
+            ><br />
 
-            <!-- phone: <a href="tel:+48123456789">+48 123 456 789</a> -->
+            <a
+              v-if="phone_number"
+              class="text-em-s underline text-highlight-muted"
+              :href="'tel:+48' + phone_number"
+              >+48 {{ phone_number }}</a
+            >
           </p>
         </article>
         <hr />
@@ -92,7 +105,7 @@ const agreement_text =
         <article>
           <h3>Interests/Hobbies</h3>
           <p class="px-4">
-            <span>Marvel/Superheros🦸</span>, <span>Movies/Series🎬</span>,
+            <span>Marvel/Superheroes🦸</span>, <span>Movies/Series🎬</span>,
             <span>Travels✈️</span>, <span>Languages💬</span>,
             <span>Infinity growth🚩</span>, <span>Self improvement🧩</span>,
             <span>Investments💵</span>, <span>Business💡</span>,
@@ -254,7 +267,25 @@ const agreement_text =
         <h3 class="text-center pb-8">Projects</h3>
         <ul>
           <li
-            class="flex flex-row w-full border-y-2 border-stone-400 py-8 text-em-xl items-center"
+            class="flex flex-row w-full border-y-2 border-stone-400 py-6 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a
+                >News Page for Międzyzakładowa Organizacja Związkowa NSZZ
+                "SOLIDARNOŚĆ" of Railway Transport in Katowice</a
+              >
+            </span>
+            <span class="desc flex-1">
+              News Page mainly for internal with possibility to create public
+              newses, share both public, internal, and private documents,
+              communication between users and newsletter.<br />
+              Stack: Figma, Vue.js (TypeScript), Django (DRF / Python), Docker,
+              PostgreSQL
+              <p>still in not public developement from 10/2022</p>
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
           >
             <span class="w-4/12">
               <a href="https://www.lyzewa.pl/ " class="underline text-blue-800"
@@ -266,12 +297,12 @@ const agreement_text =
               JavaScript, jQuery, SQLite3, Bootstrap4, hosting:
               pythonanywhere.com + ovh domain. <br />
               After 3 years of hosting this page, other web developer recreate
-              page, 90% of design is made by me.<br />
-              development time: 2-month - 2020
+              page, 90% of design is made by me.
+              <p>development time: 2-month - 2020</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -282,12 +313,12 @@ const agreement_text =
             </span>
             <span class="desc flex-1">
               Course page for INBIE about IT - support/mentoring in the process
-              of creation of this page, Bootstrap5, HTML, CSS <br />
-              development time: 2-days - 2022
+              of creation of this page, Bootstrap5, HTML, CSS
+              <p>development time: 2-days - 2022</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -305,12 +336,12 @@ const agreement_text =
                 >www.youtube.com/watch?v=O4brah-Z6QY</a
               ><br />
               Flask, JSON as fast alternative for DB, Bootstrap5, HTML, SCSS,
-              JavaScript <br />
-              development time: 3-days - 2022
+              JavaScript 
+              <p>development time: 3-days - 2022</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -321,12 +352,12 @@ const agreement_text =
             </span>
             <span class="desc flex-1">
               My own portfolio, stack: Vue.js, JavaScript, HTML, CSS, deployed
-              on Vercel(on edge). Currently in build. Planed backend: flask<br />
-              development time: 1-month - 2022
+              on Vercel(on edge). Currently in build. Planed backend: flask
+              <p>development time: 1-month - 2022</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -340,8 +371,8 @@ const agreement_text =
               ratings from users, checking in another API that car exists and if
               so add rate to the database, also it shows the average of all
               rates for each car. <br />
-              Python, Django, DRF, PostgreSQL, Docker <br />
-              development time: 1-week - 2021
+              Python, Django, DRF, PostgreSQL, Docker
+              <p>development time: 1-week - 2021</p>
             </span>
           </li>
         </ul>
