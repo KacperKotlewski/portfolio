@@ -84,7 +84,7 @@ const agreement_text =
         <article>
           <h3>Languages</h3>
           <p>
-            <strong>Polish</strong> - Native<br>
+            <strong>Polish</strong> - Native<br />
             <strong>English</strong> - B2
           </p>
         </article>
@@ -96,7 +96,7 @@ const agreement_text =
             <span>Travels✈️</span>, <span>Languages💬</span>,
             <span>Infinity growth🚩</span>, <span>Self improvement🧩</span>,
             <span>Investments💵</span>, <span>Business💡</span>,
-            <span>Tools🪛</span>, <span>AI🤖</span>, <span>Programming🧑‍💻</span>,
+            <span>Tools⚙️</span>, <span>AI🤖</span>, <span>Programming🧑‍💻</span>,
             <span>Web development📄</span>, <span>Web design🎆</span>,
             <span>UI/UX🖼️</span>, <span>IoT🛰️</span>.
           </p>
@@ -249,99 +249,106 @@ const agreement_text =
         </div>
       </section>
     </div>
-    <div class="page px-4 py-6 flex flex-col justify-center items-center">
-      <h3 class="text-center pb-8">Projects</h3>
-      <ul>
-        <li
-          class="flex flex-row w-full border-y-2 border-stone-400 py-8 text-em-xl items-center"
-        >
-          <span class="w-3/12">
-            <a href="https://www.lyzewa.pl/ " class="underline text-blue-800"
-              >www.lyzewa.pl</a
-            >
-          </span>
-          <span class="desc flex-1">
-            Portfolio for a photographer, stack: python, Django, HTML, SASS,
-            JavaScript, jQuery, SQLite3, Bootstrap4, hosting: pythonanywhere.com
-            + ovh domain. <br />
-            After 3 years of hosting this page, other web developer recreate
-            page, 90% of design is made by me.<br />
-            development time: 2-month - 2020
-          </span>
-        </li>
-        <li
-          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
-        >
-          <span class="w-3/12">
-            <a
-              href="https://www.inbie.pl/courses/"
-              class="underline text-blue-800"
-              >www.inbie.pl/courses/</a
-            >
-          </span>
-          <span class="desc flex-1">
-            Course page for INBIE about IT - support/mentoring in the process of
-            creation of this page, Bootstrap5, HTML, CSS <br />
-            development time: 2-days - 2022
-          </span>
-        </li>
-        <li
-          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
-        >
-          <span class="w-3/12">
-            <a
-              href="http://enforse.inbie.pl/corner/"
-              class="underline text-blue-800"
-              >www.inbie.pl/corner/</a
-            >
-          </span>
-          <span class="desc flex-1">
-            Page for workshop for INBIE for “Entrepreneurial MINDSET” project.
-            workshops presentation:
-            <a href="https://www.youtube.com/watch?v=O4brah-Z6QY"
-              >www.youtube.com/watch?v=O4brah-Z6QY</a
-            ><br />
-            Flask, JSON as fast alternative for DB, Bootstrap5, HTML, SCSS,
-            JavaScript <br />
-            development time: 3-days - 2022
-          </span>
-        </li>
-        <li
-          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
-        >
-          <span class="w-3/12">
-            <a
-              href="https://kacperkotlewski.pl/"
-              class="underline text-blue-800"
-              >www.kacperkotlewski.pl</a
-            >
-          </span>
-          <span class="desc flex-1">
-            My own portfolio, stack: Vue.js, JavaScript, HTML, CSS, deployed on
-            Vercel(on edge). Currently in build. Planed backend: flask<br />
-            development time: 1-month - 2022
-          </span>
-        </li>
-        <li
-          class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
-        >
-          <span class="w-3/12 warp">
-            <a
-              href="https://github.com/KacperKotlewski/Cars_API"
-              class="underline text-blue-800"
-              >github.com/KacperKotlewski<br />/Cars_API</a
-            >
-          </span>
-          <span class="desc flex-1">
-            REST API written in DRF, the goal of API was to collect car ratings
-            from users, checking in another API that car exists and if so add
-            rate to the database, also it shows the average of all rates for
-            each car. <br />
-            Python, Django, DRF, PostgreSQL, Docker <br />
-            development time: 1-week - 2021
-          </span>
-        </li>
-      </ul>
+    <div class="page px-4 py-6 flex flex-col justify-between">
+      <section class="flex-1 flex-col justify-center items-center relative">
+        <h3 class="text-center pb-8">Projects</h3>
+        <ul>
+          <li
+            class="flex flex-row w-full border-y-2 border-stone-400 py-8 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a href="https://www.lyzewa.pl/ " class="underline text-blue-800"
+                >www.lyzewa.pl</a
+              >
+            </span>
+            <span class="desc flex-1">
+              Portfolio for a photographer, stack: python, Django, HTML, SASS,
+              JavaScript, jQuery, SQLite3, Bootstrap4, hosting:
+              pythonanywhere.com + ovh domain. <br />
+              After 3 years of hosting this page, other web developer recreate
+              page, 90% of design is made by me.<br />
+              development time: 2-month - 2020
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a
+                href="https://www.inbie.pl/courses/"
+                class="underline text-blue-800"
+                >www.inbie.pl/courses/</a
+              >
+            </span>
+            <span class="desc flex-1">
+              Course page for INBIE about IT - support/mentoring in the process
+              of creation of this page, Bootstrap5, HTML, CSS <br />
+              development time: 2-days - 2022
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a
+                href="http://enforse.inbie.pl/corner/"
+                class="underline text-blue-800"
+                >www.inbie.pl/corner/</a
+              >
+            </span>
+            <span class="desc flex-1">
+              Page for workshop for INBIE for “Entrepreneurial MINDSET” project.
+              workshops presentation:
+              <a
+                href="https://www.youtube.com/watch?v=O4brah-Z6QY"
+                class="underline text-blue-800"
+                >www.youtube.com/watch?v=O4brah-Z6QY</a
+              ><br />
+              Flask, JSON as fast alternative for DB, Bootstrap5, HTML, SCSS,
+              JavaScript <br />
+              development time: 3-days - 2022
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a
+                href="https://kacperkotlewski.pl/"
+                class="underline text-blue-800"
+                >www.kacperkotlewski.pl</a
+              >
+            </span>
+            <span class="desc flex-1">
+              My own portfolio, stack: Vue.js, JavaScript, HTML, CSS, deployed
+              on Vercel(on edge). Currently in build. Planed backend: flask<br />
+              development time: 1-month - 2022
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-8 text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a
+                href="https://github.com/KacperKotlewski/Cars_API"
+                class="underline text-blue-800"
+                >github.com/KacperKotlewski<br />/Cars_API</a
+              >
+            </span>
+            <span class="desc flex-1">
+              REST API written in DRF, the goal of API was to collect car
+              ratings from users, checking in another API that car exists and if
+              so add rate to the database, also it shows the average of all
+              rates for each car. <br />
+              Python, Django, DRF, PostgreSQL, Docker <br />
+              development time: 1-week - 2021
+            </span>
+          </li>
+        </ul>
+      </section>
+      <div id="agreement" class="text-opacity-60 h-fit">
+        {{ agreement_text }}
+      </div>
     </div>
   </div>
 </template>
