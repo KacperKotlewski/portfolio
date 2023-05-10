@@ -5,38 +5,60 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        "em": {
-          "xs": ".75em",
-          "s": ".87em",
-          "md": "1em",
-          "lg": "1.12em",
-          "xl": "1.25em",
+        em: {
+          xs: ".75em",
+          s: ".87em",
+          md: "1em",
+          lg: "1.12em",
+          xl: "1.25em",
           "2xl": "1.5em",
           "3xl": "1.87em",
           "4xl": "2.25em",
-        }
+        },
       },
-      lineHeight:{
-        "em": {
-          "xs": "0.75em",
-          "s": "0.87em",
-          "md": "1em",
-          "lg": "1.12em",
-          "xl": "1.25em",
+      lineHeight: {
+        em: {
+          xs: "0.75em",
+          s: "0.87em",
+          md: "1em",
+          lg: "1.12em",
+          xl: "1.25em",
           "2xl": "1.5em",
           "3xl": "1.87em",
           "4xl": "2.25em",
-        }
+        },
+      },
+      padding: {
+        "0.25em": "0.25em",
+        "0.5em": "0.5em",
+        "0.75em": "0.75em",
+        "1em": "1em",
+        "1.25em": "1.25em",
+        "1.5em": "1.5em",
+        "2em": "2em",
+        "2.5em": "2.5em",
+        "3em": "3em",
+        "4em": "4em",
+        "5em": "5em",
+        "6em": "6em",
+        "8em": "8em",
+        "10em": "10em",
+        "12em": "12em",
+        "14em": "14em",
+        "16em": "16em",
+        "18em": "18em",
+        "20em": "20em",
+        "24em": "24em",
       },
       colors: {
-        "highlight": "var(--color-highlight)",
+        highlight: "var(--color-highlight)",
         "highlight-muted": "var(--color-highlight-muted)",
         "primary-bg": "var(--color-background)",
         "primary-bg-muted": "var(--color-background-muted)",
         "primary-bg-hard": "var(--color-background-hard)",
-        "primary": "var(--color-text)",
+        primary: "var(--color-text)",
         "primary-muted": "var(--color-text-muted)",
-      }
+      },
     },
   },
   plugins: [],

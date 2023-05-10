@@ -15,7 +15,7 @@ const agreement_text = (() => {
   <div class="w-fit h-fit overflow-auto">
     <div class="page flex">
       <section
-        class="px-0 py-6 slate-bg text-gray-300 h-full w-4/12 text-center flex flex-col justify-around items-center"
+        class="px-0 py-em-6 slate-bg text-gray-300 h-full w-4/12 text-center flex flex-col justify-around items-center"
       >
         <article>
           <h2>Kacper Kotlewski</h2>
@@ -115,8 +115,8 @@ const agreement_text = (() => {
           </p>
         </article>
       </section>
-      <section class="px-4 py-6 h-full flex-1 flex flex-col justify-between">
-        <div class="w-full h-fit flex-1 flex flex-col justify-between pb-12">
+      <section class="px-1em py-1.5em h-full flex-1 flex flex-col justify-between">
+        <div class="w-full h-fit flex-1 flex flex-col justify-between pb-3em">
           <!-- 
           experience
          -->
@@ -203,7 +203,8 @@ const agreement_text = (() => {
                 <h4>Main language and frameworks/libraries</h4>
                 <span class="desc">
                   Python, Django, DRF, HTML, CSS, SASS, JS, Typescript,
-                  Bootstrap, TailwindCSS. Vue.js, Vue Router, Pinia, Tessy.
+                  Bootstrap, TailwindCSS. Vue.js, Vue Router, Pinia, Tessy, Unit
+                  testing.
                 </span>
               </li>
               <li>
@@ -262,12 +263,26 @@ const agreement_text = (() => {
         </div>
       </section>
     </div>
-    <div class="page px-4 py-6 flex flex-col justify-between">
+    <div class="page px-1em py-1.5em flex flex-col justify-between">
       <section class="flex-1 flex-col justify-center items-center relative">
-        <h3 class="text-center pb-8">Projects</h3>
+        <h3 class="text-center pb-2em">Projects</h3>
         <ul>
           <li
-            class="flex flex-row w-full border-y-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-y-2 border-stone-400 py-1.5em text-em-xl items-center"
+          >
+            <span class="w-4/12">
+              <a>Elene - English learning app</a>
+            </span>
+            <span class="desc flex-1">
+              E-learning mobile app dedicated for seniors and adults to learn
+              English<br />
+              Stack: Figma, Canva, GitHub, Kotlin. Planed backend: Firebase /
+              Spring / FastAPI.
+              <p>In not public developement from 03/2023</p>
+            </span>
+          </li>
+          <li
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -279,13 +294,14 @@ const agreement_text = (() => {
               News Page mainly for internal with possibility to create public
               newses, share both public, internal, and private documents,
               communication between users and newsletter.<br />
-              Stack: Figma, Vue.js (TypeScript), Django (DRF / Python), Docker,
-              PostgreSQL
-              <p>still in not public developement from 10/2022</p>
+              Stack: Figma, GitHub, Vue.js (TypeScript), Django (DRF / Python),
+              Docker, PostgreSQL, Thunder (Postman alternative), Unit tests
+              (Django & DRF tests).
+              <p>In not public developement from 10/2022</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a href="https://www.lyzewa.pl/ " class="underline text-blue-800"
@@ -293,8 +309,8 @@ const agreement_text = (() => {
               >
             </span>
             <span class="desc flex-1">
-              Portfolio for a photographer, stack: python, Django, HTML, SASS,
-              JavaScript, jQuery, SQLite3, Bootstrap4, hosting:
+              Portfolio for a photographer, stack: Python, GitHub, Django, HTML,
+              SASS, JavaScript, jQuery, SQLite3, Bootstrap4, hosting:
               pythonanywhere.com + ovh domain. <br />
               After 3 years of hosting this page, other web developer recreate
               page, 90% of design is made by me.
@@ -302,7 +318,7 @@ const agreement_text = (() => {
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -318,7 +334,7 @@ const agreement_text = (() => {
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -336,12 +352,12 @@ const agreement_text = (() => {
                 >www.youtube.com/watch?v=O4brah-Z6QY</a
               ><br />
               Flask, JSON as fast alternative for DB, Bootstrap5, HTML, SCSS,
-              JavaScript 
+              JavaScript
               <p>development time: 3-days - 2022</p>
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -357,7 +373,7 @@ const agreement_text = (() => {
             </span>
           </li>
           <li
-            class="flex flex-row w-full border-b-2 border-stone-400 py-6 text-em-xl items-center"
+            class="flex flex-row w-full border-b-2 border-stone-400 py-1.5em text-em-xl items-center"
           >
             <span class="w-4/12">
               <a
@@ -457,7 +473,7 @@ p {
 .page span {
   font-size: 0.8em;
   &.desc {
-    line-height: 1;
+    line-height: 1.3em;
   }
 }
 li {
