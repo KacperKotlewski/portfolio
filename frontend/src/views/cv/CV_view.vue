@@ -64,32 +64,50 @@ export default {
       this.cv_based_on_width(true);
       this.applyNewScale();
 
-      this.printDocument().then(() => {
+      const unzoom = () => {
         this.zoomScale = zoom;
         this.cv_based_on_width(false);
         this.applyNewScale();
-      });
-    },
-    async printDocument() {
-      var elementHTML = document.querySelector("#CV");
-      var page_count = elementHTML.querySelectorAll(".page").length;
-      await html2canvas(elementHTML).then(function (canvas) {
-        var pdf = new jsPDF("p", "mm", "a4");
-        var myImage = canvas.toDataURL("image/jpeg,1.0");
+      };
 
-        var imgWidth = pdf.internal.pageSize.getWidth();
-        var imgHeight = pdf.internal.pageSize.getHeight() * page_count;
+      this.printDocument(unzoom);
+    },
+    async printDocument(afterCanvasRendered = () => {}) {
+      const elementHTML = document.querySelector("#CV");
+      const page_count = elementHTML.querySelectorAll(".page").length;
+      const myImage = await html2canvas(elementHTML).then(async function (
+        canvas
+      ) {
+        const myImage = canvas.toDataURL("image/jpeg,1.0");
+        return myImage;
+      });
+
+      afterCanvasRendered();
+
+      {
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const imgWidth = pdf.internal.pageSize.getWidth();
+        const imgHeight = pdf.internal.pageSize.getHeight() * page_count;
 
         for (let page = 0; page < page_count; page++) {
           if (page != 0) {
             pdf.addPage();
           }
           const y_offset = -page * (imgHeight / page_count);
-          pdf.addImage(myImage, "png", 0, y_offset, imgWidth, imgHeight);
+          pdf.addImage(
+            myImage,
+            "JPEG",
+            0,
+            y_offset,
+            imgWidth,
+            imgHeight,
+            `CV_page_${page}`,
+            "SLOW"
+          );
         }
         pdf.save(`Kacper Kotlewski CV.pdf`);
-      });
-      return;
+      }
     },
     cv_based_on_width(bool) {
       if (bool) {
